@@ -137,9 +137,7 @@
     </el-dialog>
     <!-- 任务信息弹窗 -->
     <el-dialog v-model="taskDialogVisible" title="任务信息" width="80%" :modal="true" :close-on-click-modal="false" style="max-width:1200px;">
-      <!-- 树状图 -->
-      <div ref="treeChart" v-loading="taskLoading" style="width: 100%; height: 600px; background-color: #ffffff; border-radius: 4px;"></div>
-      
+
       <!-- 任务管理表格 -->
       <el-table :data="taskList" v-loading="taskLoading" style="width: 100%; margin-top: 20px;">
         <el-table-column prop="type" label="任务类型" width="130"/>
@@ -211,7 +209,6 @@ export default {
       taskDialogVisible: false,
       taskList: [],
       taskLoading: false,
-      treeData: null, // 新增
     };
   },
 
@@ -331,13 +328,7 @@ export default {
       try {
         const res = await get('get_item_tasks');
         if (res.data.status === "success") {
-          // 更新树状图数据
-          this.treeData = res.data.tree;
-          // 更新表格数据
           this.taskList = res.data.tasks;
-          this.$nextTick(() => {
-            this.renderTaskTree();
-          });
         } else {
           this.$message.error(res.data.message || "获取任务失败");
         }
@@ -347,101 +338,7 @@ export default {
       this.taskLoading = false;
     },
 
-    renderTaskTree() {
-      if (!this.treeData) return;
-      const treeData = [this.treeData];
-      const chartDom = this.$refs.treeChart;
-      if (!chartDom) return;
-      const myChart = echarts.init(chartDom);
-
-      const option = {
-        backgroundColor: '#f8fafc',
-        tooltip: {
-          trigger: 'item',
-          triggerOn: 'mousemove',
-          backgroundColor: '#fff',
-          borderColor: '#409EFF',
-          borderWidth: 1,
-          textStyle: {
-            color: '#333',
-            fontSize: 14
-          },
-          padding: 10,
-          extraCssText: 'box-shadow: 0 2px 8px rgba(64,158,255,0.15);'
-        },
-        series: [
-          {
-            type: 'tree',
-            data: treeData,
-            top: '5%',
-            left: '10%',
-            bottom: '5%',
-            right: '25%',
-            symbol: 'circle',
-            symbolSize: 18,
-            edgeShape: 'polyline',
-            edgeForkPosition: '63%',
-            roam: true,
-            initialTreeDepth: 3,
-            nodePadding: 10, // 节点之间的垂直间距，默认7，调大可拉开条目
-            lineStyle: {
-              color: '#409EFF',
-              width: 2,
-              curveness: 0.25,
-              shadowColor: 'rgba(64,158,255,0.2)',
-              shadowBlur: 6
-            },
-            itemStyle: {
-              color: '#fff',
-              borderColor: '#409EFF',
-              borderWidth: 2,
-              shadowColor: 'rgba(64,158,255,0.15)',
-              shadowBlur: 8
-            },
-            label: {
-              backgroundColor: '#fff',
-              borderColor: '#409EFF',
-              borderWidth: 1,
-              borderRadius: 6,
-              padding: [6, 12],
-              color: '#333',
-              fontWeight: 'bold',
-              fontSize: 15,
-              position: 'left',
-              verticalAlign: 'middle',
-              align: 'right',
-              shadowColor: 'rgba(64,158,255,0.08)',
-              shadowBlur: 2,
-            },
-            leaves: {
-              label: {
-                backgroundColor: '#e6f7ff',
-                borderColor: '#91d5ff',
-                borderWidth: 1,
-                borderRadius: 6,
-                padding: [2, 10],
-                color: '#409EFF',
-                fontWeight: 'normal',
-                fontSize: 12,
-                position: 'right',
-                verticalAlign: 'middle',
-                align: 'left',
-                minMargin:22,
-                height: 22,
-                lineHeight: 22 // 叶子节点的行高，进一步拉开条目
-              }
-            },
-            expandAndCollapse: true,
-            animationDuration: 600,
-            animationDurationUpdate: 800
-          }
-        ]
-      };
-      myChart.setOption(option);
-      window.addEventListener('resize', () => {
-        myChart.resize();
-      });
-    },
+  
 
     // 预留删除方法
     deleteProject(item) {
@@ -493,10 +390,7 @@ export default {
             const res = await get('get_item_tasks');
             if (res.data.status === "success") {
               this.taskList = res.data.tasks;
-              this.treeData = res.data.tree;  // 更新树状图数据
-              this.$nextTick(() => {
-                this.renderTaskTree();  // 重新渲染树状图
-              });
+
             }
           } else {
             this.$message.error(response.data.message || '删除失败');

@@ -1,6 +1,17 @@
 # scseq
 
-## Project setup
+## Environment
+
+**Anaconda**
+
+~~~
+conda env create -f environment.yml
+
+conda activate scseq_env
+~~~
+
+## VUE
+
 ```
 npm install
 ```
@@ -22,3 +33,8 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+
+

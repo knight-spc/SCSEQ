@@ -1,0 +1,2123 @@
+{
+  "nodes": [
+    {
+      "id": "CD16- NK cells",
+      "name": "CD16- NK cells",
+      "category": "CD16- NK cells",
+      "symbolSize": 6.0638,
+      "value": 429
+    },
+    {
+      "id": "CD16+ NK cells",
+      "name": "CD16+ NK cells",
+      "category": "CD16+ NK cells",
+      "symbolSize": 5.2781,
+      "value": 195
+    },
+    {
+      "id": "Classical monocytes",
+      "name": "Classical monocytes",
+      "category": "Classical monocytes",
+      "symbolSize": 5.2933,
+      "value": 198
+    },
+    {
+      "id": "DC1",
+      "name": "DC1",
+      "category": "DC1",
+      "symbolSize": 5.037,
+      "value": 153
+    },
+    {
+      "id": "DC2",
+      "name": "DC2",
+      "category": "DC2",
+      "symbolSize": 6.0868,
+      "value": 439
+    },
+    {
+      "id": "Endothelial cells",
+      "name": "Endothelial cells",
+      "category": "Endothelial cells",
+      "symbolSize": 7.8925,
+      "value": 2676
+    },
+    {
+      "id": "Epithelial cells",
+      "name": "Epithelial cells",
+      "category": "Epithelial cells",
+      "symbolSize": 8.2199,
+      "value": 3713
+    },
+    {
+      "id": "Fibroblasts",
+      "name": "Fibroblasts",
+      "category": "Fibroblasts",
+      "symbolSize": 4.8903,
+      "value": 132
+    },
+    {
+      "id": "Macrophages",
+      "name": "Macrophages",
+      "category": "Macrophages",
+      "symbolSize": 7.2944,
+      "value": 1471
+    },
+    {
+      "id": "MAIT cells",
+      "name": "MAIT cells",
+      "category": "MAIT cells",
+      "symbolSize": 5.7333,
+      "value": 308
+    },
+    {
+      "id": "Mast cells",
+      "name": "Mast cells",
+      "category": "Mast cells",
+      "symbolSize": 2.4849,
+      "value": 11
+    },
+    {
+      "id": "Memory B cells",
+      "name": "Memory B cells",
+      "category": "Memory B cells",
+      "symbolSize": 4.8903,
+      "value": 132
+    },
+    {
+      "id": "Migratory DCs",
+      "name": "Migratory DCs",
+      "category": "Migratory DCs",
+      "symbolSize": 3.4657,
+      "value": 31
+    },
+    {
+      "id": "NK cells",
+      "name": "NK cells",
+      "category": "NK cells",
+      "symbolSize": 6.4831,
+      "value": 653
+    },
+    {
+      "id": "NKT cells",
+      "name": "NKT cells",
+      "category": "NKT cells",
+      "symbolSize": 5.3753,
+      "value": 215
+    },
+    {
+      "id": "Non-classical monocytes",
+      "name": "Non-classical monocytes",
+      "category": "Non-classical monocytes",
+      "symbolSize": 4.3041,
+      "value": 73
+    },
+    {
+      "id": "pDC",
+      "name": "pDC",
+      "category": "pDC",
+      "symbolSize": 3.912,
+      "value": 49
+    },
+    {
+      "id": "Plasma cells",
+      "name": "Plasma cells",
+      "category": "Plasma cells",
+      "symbolSize": 6.3986,
+      "value": 600
+    },
+    {
+      "id": "Regulatory T cells",
+      "name": "Regulatory T cells",
+      "category": "Regulatory T cells",
+      "symbolSize": 6.3226,
+      "value": 556
+    },
+    {
+      "id": "Tem/Effector helper T cells",
+      "name": "Tem/Effector helper T cells",
+      "category": "Tem/Effector helper T cells",
+      "symbolSize": 8.0962,
+      "value": 3281
+    },
+    {
+      "id": "Tem/Temra cytotoxic T cells",
+      "name": "Tem/Temra cytotoxic T cells",
+      "category": "Tem/Temra cytotoxic T cells",
+      "symbolSize": 3.989,
+      "value": 53
+    },
+    {
+      "id": "Tem/Trm cytotoxic T cells",
+      "name": "Tem/Trm cytotoxic T cells",
+      "category": "Tem/Trm cytotoxic T cells",
+      "symbolSize": 7.0909,
+      "value": 1200
+    }
+  ],
+  "categories": [
+    {
+      "name": "CD16- NK cells"
+    },
+    {
+      "name": "CD16+ NK cells"
+    },
+    {
+      "name": "Classical monocytes"
+    },
+    {
+      "name": "DC1"
+    },
+    {
+      "name": "DC2"
+    },
+    {
+      "name": "Endothelial cells"
+    },
+    {
+      "name": "Epithelial cells"
+    },
+    {
+      "name": "Fibroblasts"
+    },
+    {
+      "name": "Macrophages"
+    },
+    {
+      "name": "MAIT cells"
+    },
+    {
+      "name": "Mast cells"
+    },
+    {
+      "name": "Memory B cells"
+    },
+    {
+      "name": "Migratory DCs"
+    },
+    {
+      "name": "NK cells"
+    },
+    {
+      "name": "NKT cells"
+    },
+    {
+      "name": "Non-classical monocytes"
+    },
+    {
+      "name": "pDC"
+    },
+    {
+      "name": "Plasma cells"
+    },
+    {
+      "name": "Regulatory T cells"
+    },
+    {
+      "name": "Tem/Effector helper T cells"
+    },
+    {
+      "name": "Tem/Temra cytotoxic T cells"
+    },
+    {
+      "name": "Tem/Trm cytotoxic T cells"
+    }
+  ],
+  "links": [
+    {
+      "source": "CD16- NK cells",
+      "target": "CD16- NK cells",
+      "value": 0.5202
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "CD16+ NK cells",
+      "value": 0.4863
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Classical monocytes",
+      "value": 1.9417
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "DC1",
+      "value": 0.8568
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "DC2",
+      "value": 0.9303
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Endothelial cells",
+      "value": 0.1192
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Epithelial cells",
+      "value": 0.0443
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Fibroblasts",
+      "value": 0.6361
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Macrophages",
+      "value": 1.0647
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "MAIT cells",
+      "value": 0.4593
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Memory B cells",
+      "value": 0.796
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Migratory DCs",
+      "value": 0.815
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "NKT cells",
+      "value": 0.5329
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Non-classical monocytes",
+      "value": 0.7771
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "pDC",
+      "value": 0.6887
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Plasma cells",
+      "value": 0.1982
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Regulatory T cells",
+      "value": 0.6492
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Tem/Effector helper T cells",
+      "value": 0.4911
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 0.4937
+    },
+    {
+      "source": "CD16- NK cells",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.6262
+    },
+    {
+      "source": "CD16+ NK cells",
+      "target": "Classical monocytes",
+      "value": 1.5951
+    },
+    {
+      "source": "CD16+ NK cells",
+      "target": "DC1",
+      "value": 0.0205
+    },
+    {
+      "source": "CD16+ NK cells",
+      "target": "DC2",
+      "value": 0.2824
+    },
+    {
+      "source": "CD16+ NK cells",
+      "target": "Fibroblasts",
+      "value": 0.56
+    },
+    {
+      "source": "CD16+ NK cells",
+      "target": "Macrophages",
+      "value": 0.3619
+    },
+    {
+      "source": "CD16+ NK cells",
+      "target": "Non-classical monocytes",
+      "value": 0.3673
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "CD16- NK cells",
+      "value": 0.76
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "CD16+ NK cells",
+      "value": 0.7873
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Classical monocytes",
+      "value": 1.7917
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "DC1",
+      "value": 0.7091
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "DC2",
+      "value": 1.2817
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Endothelial cells",
+      "value": 0.951
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Epithelial cells",
+      "value": 0.168
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Fibroblasts",
+      "value": 0.0351
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Macrophages",
+      "value": 0.8881
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "MAIT cells",
+      "value": 0.8989
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Mast cells",
+      "value": 0.3259
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Memory B cells",
+      "value": 1.014
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Migratory DCs",
+      "value": 0.8381
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "NK cells",
+      "value": 0.0919
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "NKT cells",
+      "value": 0.8248
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Non-classical monocytes",
+      "value": 0.981
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "pDC",
+      "value": 0.4732
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Plasma cells",
+      "value": 0.1146
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Regulatory T cells",
+      "value": 0.9156
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Tem/Effector helper T cells",
+      "value": 0.8134
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 0.7776
+    },
+    {
+      "source": "Classical monocytes",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.9252
+    },
+    {
+      "source": "DC1",
+      "target": "CD16- NK cells",
+      "value": 1.7125
+    },
+    {
+      "source": "DC1",
+      "target": "CD16+ NK cells",
+      "value": 1.7705
+    },
+    {
+      "source": "DC1",
+      "target": "Classical monocytes",
+      "value": 2.305
+    },
+    {
+      "source": "DC1",
+      "target": "DC1",
+      "value": 1.6009
+    },
+    {
+      "source": "DC1",
+      "target": "DC2",
+      "value": 2.0893
+    },
+    {
+      "source": "DC1",
+      "target": "Endothelial cells",
+      "value": 0.275
+    },
+    {
+      "source": "DC1",
+      "target": "Epithelial cells",
+      "value": 0.05
+    },
+    {
+      "source": "DC1",
+      "target": "Fibroblasts",
+      "value": 0.0797
+    },
+    {
+      "source": "DC1",
+      "target": "Macrophages",
+      "value": 1.7944
+    },
+    {
+      "source": "DC1",
+      "target": "MAIT cells",
+      "value": 1.8735
+    },
+    {
+      "source": "DC1",
+      "target": "Mast cells",
+      "value": 0.9227
+    },
+    {
+      "source": "DC1",
+      "target": "Memory B cells",
+      "value": 1.9595
+    },
+    {
+      "source": "DC1",
+      "target": "Migratory DCs",
+      "value": 1.7825
+    },
+    {
+      "source": "DC1",
+      "target": "NK cells",
+      "value": 0.3169
+    },
+    {
+      "source": "DC1",
+      "target": "NKT cells",
+      "value": 1.8491
+    },
+    {
+      "source": "DC1",
+      "target": "Non-classical monocytes",
+      "value": 1.7036
+    },
+    {
+      "source": "DC1",
+      "target": "pDC",
+      "value": 1.3343
+    },
+    {
+      "source": "DC1",
+      "target": "Plasma cells",
+      "value": 0.5719
+    },
+    {
+      "source": "DC1",
+      "target": "Regulatory T cells",
+      "value": 2.1252
+    },
+    {
+      "source": "DC1",
+      "target": "Tem/Effector helper T cells",
+      "value": 1.6577
+    },
+    {
+      "source": "DC1",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 1.7461
+    },
+    {
+      "source": "DC1",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 2.0947
+    },
+    {
+      "source": "DC2",
+      "target": "CD16- NK cells",
+      "value": 1.1451
+    },
+    {
+      "source": "DC2",
+      "target": "CD16+ NK cells",
+      "value": 1.2417
+    },
+    {
+      "source": "DC2",
+      "target": "Classical monocytes",
+      "value": 1.9805
+    },
+    {
+      "source": "DC2",
+      "target": "DC1",
+      "value": 0.9437
+    },
+    {
+      "source": "DC2",
+      "target": "DC2",
+      "value": 1.4109
+    },
+    {
+      "source": "DC2",
+      "target": "Endothelial cells",
+      "value": 0.4901
+    },
+    {
+      "source": "DC2",
+      "target": "Epithelial cells",
+      "value": 0.0857
+    },
+    {
+      "source": "DC2",
+      "target": "Fibroblasts",
+      "value": 0.0998
+    },
+    {
+      "source": "DC2",
+      "target": "Macrophages",
+      "value": 1.065
+    },
+    {
+      "source": "DC2",
+      "target": "MAIT cells",
+      "value": 1.1931
+    },
+    {
+      "source": "DC2",
+      "target": "Mast cells",
+      "value": 0.7419
+    },
+    {
+      "source": "DC2",
+      "target": "Memory B cells",
+      "value": 1.2168
+    },
+    {
+      "source": "DC2",
+      "target": "Migratory DCs",
+      "value": 0.8997
+    },
+    {
+      "source": "DC2",
+      "target": "NK cells",
+      "value": 0.2116
+    },
+    {
+      "source": "DC2",
+      "target": "NKT cells",
+      "value": 1.2699
+    },
+    {
+      "source": "DC2",
+      "target": "Non-classical monocytes",
+      "value": 1.157
+    },
+    {
+      "source": "DC2",
+      "target": "pDC",
+      "value": 0.4745
+    },
+    {
+      "source": "DC2",
+      "target": "Plasma cells",
+      "value": 0.1625
+    },
+    {
+      "source": "DC2",
+      "target": "Regulatory T cells",
+      "value": 1.4062
+    },
+    {
+      "source": "DC2",
+      "target": "Tem/Effector helper T cells",
+      "value": 1.1219
+    },
+    {
+      "source": "DC2",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 1.0924
+    },
+    {
+      "source": "DC2",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 1.4032
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "CD16- NK cells",
+      "value": 0.7837
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "CD16+ NK cells",
+      "value": 0.7837
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Classical monocytes",
+      "value": 1.1436
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "DC1",
+      "value": 0.7891
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "DC2",
+      "value": 1.0646
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Endothelial cells",
+      "value": 0.3713
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Epithelial cells",
+      "value": 0.209
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Fibroblasts",
+      "value": 0.2293
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Macrophages",
+      "value": 0.8255
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "MAIT cells",
+      "value": 0.7402
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Mast cells",
+      "value": 0.0279
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Memory B cells",
+      "value": 1.0133
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Migratory DCs",
+      "value": 1.0226
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "NK cells",
+      "value": 0.1355
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "NKT cells",
+      "value": 0.8993
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Non-classical monocytes",
+      "value": 0.835
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "pDC",
+      "value": 0.88
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Plasma cells",
+      "value": 0.3224
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Regulatory T cells",
+      "value": 0.8898
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Tem/Effector helper T cells",
+      "value": 0.8093
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 0.8496
+    },
+    {
+      "source": "Endothelial cells",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.9779
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "CD16- NK cells",
+      "value": 0.3329
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "CD16+ NK cells",
+      "value": 0.2963
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Classical monocytes",
+      "value": 0.9576
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "DC1",
+      "value": 0.1472
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "DC2",
+      "value": 0.7675
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Endothelial cells",
+      "value": 0.502
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Epithelial cells",
+      "value": 0.3123
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Fibroblasts",
+      "value": 0.9495
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Macrophages",
+      "value": 0.8091
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "MAIT cells",
+      "value": 0.3775
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Mast cells",
+      "value": 0.272
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Memory B cells",
+      "value": 0.2138
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Migratory DCs",
+      "value": 0.2696
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "NK cells",
+      "value": 0.1812
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "NKT cells",
+      "value": 0.4915
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Non-classical monocytes",
+      "value": 0.2022
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "pDC",
+      "value": 0.1419
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Plasma cells",
+      "value": 0.0597
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Regulatory T cells",
+      "value": 0.3175
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Tem/Effector helper T cells",
+      "value": 0.3127
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 0.3561
+    },
+    {
+      "source": "Epithelial cells",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.3476
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "CD16- NK cells",
+      "value": 1.7022
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "CD16+ NK cells",
+      "value": 1.6292
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Classical monocytes",
+      "value": 2.2543
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "DC1",
+      "value": 1.7014
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "DC2",
+      "value": 2.3462
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Endothelial cells",
+      "value": 0.7017
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Epithelial cells",
+      "value": 0.9268
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Fibroblasts",
+      "value": 1.1664
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Macrophages",
+      "value": 2.0213
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "MAIT cells",
+      "value": 1.3286
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Mast cells",
+      "value": 0.3444
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Memory B cells",
+      "value": 1.9283
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Migratory DCs",
+      "value": 2.0368
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "NK cells",
+      "value": 0.6455
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "NKT cells",
+      "value": 1.9109
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Non-classical monocytes",
+      "value": 1.6241
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "pDC",
+      "value": 1.9506
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Plasma cells",
+      "value": 0.7517
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Regulatory T cells",
+      "value": 1.7933
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Tem/Effector helper T cells",
+      "value": 1.3955
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 1.5383
+    },
+    {
+      "source": "Fibroblasts",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 1.9486
+    },
+    {
+      "source": "Macrophages",
+      "target": "CD16- NK cells",
+      "value": 1.8252
+    },
+    {
+      "source": "Macrophages",
+      "target": "CD16+ NK cells",
+      "value": 1.8714
+    },
+    {
+      "source": "Macrophages",
+      "target": "Classical monocytes",
+      "value": 3.3281
+    },
+    {
+      "source": "Macrophages",
+      "target": "DC1",
+      "value": 1.1083
+    },
+    {
+      "source": "Macrophages",
+      "target": "DC2",
+      "value": 1.9889
+    },
+    {
+      "source": "Macrophages",
+      "target": "Endothelial cells",
+      "value": 0.8707
+    },
+    {
+      "source": "Macrophages",
+      "target": "Epithelial cells",
+      "value": 0.0813
+    },
+    {
+      "source": "Macrophages",
+      "target": "Fibroblasts",
+      "value": 1.2369
+    },
+    {
+      "source": "Macrophages",
+      "target": "Macrophages",
+      "value": 1.8134
+    },
+    {
+      "source": "Macrophages",
+      "target": "MAIT cells",
+      "value": 2.2942
+    },
+    {
+      "source": "Macrophages",
+      "target": "Mast cells",
+      "value": 1.5819
+    },
+    {
+      "source": "Macrophages",
+      "target": "Memory B cells",
+      "value": 1.8894
+    },
+    {
+      "source": "Macrophages",
+      "target": "Migratory DCs",
+      "value": 1.6043
+    },
+    {
+      "source": "Macrophages",
+      "target": "NK cells",
+      "value": 0.4283
+    },
+    {
+      "source": "Macrophages",
+      "target": "NKT cells",
+      "value": 2.4198
+    },
+    {
+      "source": "Macrophages",
+      "target": "Non-classical monocytes",
+      "value": 1.7628
+    },
+    {
+      "source": "Macrophages",
+      "target": "pDC",
+      "value": 0.6836
+    },
+    {
+      "source": "Macrophages",
+      "target": "Plasma cells",
+      "value": 0.2364
+    },
+    {
+      "source": "Macrophages",
+      "target": "Regulatory T cells",
+      "value": 2.2092
+    },
+    {
+      "source": "Macrophages",
+      "target": "Tem/Effector helper T cells",
+      "value": 1.9417
+    },
+    {
+      "source": "Macrophages",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 2.2182
+    },
+    {
+      "source": "Macrophages",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 2.2411
+    },
+    {
+      "source": "MAIT cells",
+      "target": "CD16- NK cells",
+      "value": 0.4741
+    },
+    {
+      "source": "MAIT cells",
+      "target": "CD16+ NK cells",
+      "value": 0.4432
+    },
+    {
+      "source": "MAIT cells",
+      "target": "Classical monocytes",
+      "value": 1.824
+    },
+    {
+      "source": "MAIT cells",
+      "target": "DC1",
+      "value": 0.5467
+    },
+    {
+      "source": "MAIT cells",
+      "target": "DC2",
+      "value": 0.9381
+    },
+    {
+      "source": "MAIT cells",
+      "target": "Fibroblasts",
+      "value": 0.3415
+    },
+    {
+      "source": "MAIT cells",
+      "target": "Macrophages",
+      "value": 0.8453
+    },
+    {
+      "source": "MAIT cells",
+      "target": "MAIT cells",
+      "value": 0.4184
+    },
+    {
+      "source": "MAIT cells",
+      "target": "Memory B cells",
+      "value": 0.7265
+    },
+    {
+      "source": "MAIT cells",
+      "target": "Migratory DCs",
+      "value": 0.7438
+    },
+    {
+      "source": "MAIT cells",
+      "target": "NKT cells",
+      "value": 0.4857
+    },
+    {
+      "source": "MAIT cells",
+      "target": "Non-classical monocytes",
+      "value": 0.8546
+    },
+    {
+      "source": "MAIT cells",
+      "target": "pDC",
+      "value": 0.6287
+    },
+    {
+      "source": "MAIT cells",
+      "target": "Plasma cells",
+      "value": 0.1805
+    },
+    {
+      "source": "MAIT cells",
+      "target": "Regulatory T cells",
+      "value": 0.5552
+    },
+    {
+      "source": "MAIT cells",
+      "target": "Tem/Effector helper T cells",
+      "value": 0.4476
+    },
+    {
+      "source": "MAIT cells",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 0.4499
+    },
+    {
+      "source": "MAIT cells",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.571
+    },
+    {
+      "source": "Mast cells",
+      "target": "Classical monocytes",
+      "value": 0.9066
+    },
+    {
+      "source": "Mast cells",
+      "target": "DC2",
+      "value": 0.2641
+    },
+    {
+      "source": "Mast cells",
+      "target": "Fibroblasts",
+      "value": 0.1542
+    },
+    {
+      "source": "Mast cells",
+      "target": "Macrophages",
+      "value": 0.2179
+    },
+    {
+      "source": "Mast cells",
+      "target": "Non-classical monocytes",
+      "value": 0.3013
+    },
+    {
+      "source": "Memory B cells",
+      "target": "CD16- NK cells",
+      "value": 0.3769
+    },
+    {
+      "source": "Memory B cells",
+      "target": "CD16+ NK cells",
+      "value": 0.3523
+    },
+    {
+      "source": "Memory B cells",
+      "target": "Classical monocytes",
+      "value": 0.479
+    },
+    {
+      "source": "Memory B cells",
+      "target": "DC1",
+      "value": 0.4355
+    },
+    {
+      "source": "Memory B cells",
+      "target": "DC2",
+      "value": 0.5618
+    },
+    {
+      "source": "Memory B cells",
+      "target": "Macrophages",
+      "value": 0.4752
+    },
+    {
+      "source": "Memory B cells",
+      "target": "MAIT cells",
+      "value": 0.3324
+    },
+    {
+      "source": "Memory B cells",
+      "target": "Memory B cells",
+      "value": 0.5793
+    },
+    {
+      "source": "Memory B cells",
+      "target": "Migratory DCs",
+      "value": 0.5932
+    },
+    {
+      "source": "Memory B cells",
+      "target": "NKT cells",
+      "value": 0.3862
+    },
+    {
+      "source": "Memory B cells",
+      "target": "Non-classical monocytes",
+      "value": 0.4382
+    },
+    {
+      "source": "Memory B cells",
+      "target": "pDC",
+      "value": 0.3928
+    },
+    {
+      "source": "Memory B cells",
+      "target": "Regulatory T cells",
+      "value": 0.4418
+    },
+    {
+      "source": "Memory B cells",
+      "target": "Tem/Effector helper T cells",
+      "value": 0.3557
+    },
+    {
+      "source": "Memory B cells",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 0.3576
+    },
+    {
+      "source": "Memory B cells",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.4545
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "CD16- NK cells",
+      "value": 0.8418
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "CD16+ NK cells",
+      "value": 0.9611
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Classical monocytes",
+      "value": 1.0677
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "DC1",
+      "value": 0.5864
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "DC2",
+      "value": 0.7367
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Endothelial cells",
+      "value": 0.3598
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Epithelial cells",
+      "value": 0.0656
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Fibroblasts",
+      "value": 0.0824
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Macrophages",
+      "value": 0.6099
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "MAIT cells",
+      "value": 1.0138
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Mast cells",
+      "value": 0.7548
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Memory B cells",
+      "value": 1.1071
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Migratory DCs",
+      "value": 1.745
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "NK cells",
+      "value": 0.2154
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "NKT cells",
+      "value": 0.9605
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Non-classical monocytes",
+      "value": 0.6255
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "pDC",
+      "value": 0.3693
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Plasma cells",
+      "value": 0.1118
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Regulatory T cells",
+      "value": 0.9882
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Tem/Effector helper T cells",
+      "value": 1.0334
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 0.923
+    },
+    {
+      "source": "Migratory DCs",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.9844
+    },
+    {
+      "source": "NK cells",
+      "target": "CD16- NK cells",
+      "value": 0.4609
+    },
+    {
+      "source": "NK cells",
+      "target": "CD16+ NK cells",
+      "value": 0.4309
+    },
+    {
+      "source": "NK cells",
+      "target": "Classical monocytes",
+      "value": 1.1196
+    },
+    {
+      "source": "NK cells",
+      "target": "DC1",
+      "value": 0.5317
+    },
+    {
+      "source": "NK cells",
+      "target": "DC2",
+      "value": 0.792
+    },
+    {
+      "source": "NK cells",
+      "target": "Endothelial cells",
+      "value": 0.2007
+    },
+    {
+      "source": "NK cells",
+      "target": "Epithelial cells",
+      "value": 0.0135
+    },
+    {
+      "source": "NK cells",
+      "target": "Fibroblasts",
+      "value": 0.133
+    },
+    {
+      "source": "NK cells",
+      "target": "Macrophages",
+      "value": 0.6776
+    },
+    {
+      "source": "NK cells",
+      "target": "MAIT cells",
+      "value": 0.4068
+    },
+    {
+      "source": "NK cells",
+      "target": "Memory B cells",
+      "value": 0.7066
+    },
+    {
+      "source": "NK cells",
+      "target": "Migratory DCs",
+      "value": 0.7235
+    },
+    {
+      "source": "NK cells",
+      "target": "NKT cells",
+      "value": 0.4723
+    },
+    {
+      "source": "NK cells",
+      "target": "Non-classical monocytes",
+      "value": 0.6748
+    },
+    {
+      "source": "NK cells",
+      "target": "pDC",
+      "value": 0.6116
+    },
+    {
+      "source": "NK cells",
+      "target": "Plasma cells",
+      "value": 0.1755
+    },
+    {
+      "source": "NK cells",
+      "target": "Regulatory T cells",
+      "value": 0.5399
+    },
+    {
+      "source": "NK cells",
+      "target": "Tem/Effector helper T cells",
+      "value": 0.4351
+    },
+    {
+      "source": "NK cells",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 0.4374
+    },
+    {
+      "source": "NK cells",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.5553
+    },
+    {
+      "source": "NKT cells",
+      "target": "Classical monocytes",
+      "value": 1.6587
+    },
+    {
+      "source": "NKT cells",
+      "target": "DC2",
+      "value": 0.3978
+    },
+    {
+      "source": "NKT cells",
+      "target": "Epithelial cells",
+      "value": 0.0184
+    },
+    {
+      "source": "NKT cells",
+      "target": "Fibroblasts",
+      "value": 0.5571
+    },
+    {
+      "source": "NKT cells",
+      "target": "Macrophages",
+      "value": 0.4765
+    },
+    {
+      "source": "NKT cells",
+      "target": "Non-classical monocytes",
+      "value": 0.359
+    },
+    {
+      "source": "NKT cells",
+      "target": "Regulatory T cells",
+      "value": 0.0325
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "CD16- NK cells",
+      "value": 0.3906
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "CD16+ NK cells",
+      "value": 0.4475
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Classical monocytes",
+      "value": 1.1015
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "DC1",
+      "value": 0.2706
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "DC2",
+      "value": 0.6209
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Endothelial cells",
+      "value": 0.4528
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Epithelial cells",
+      "value": 0.0829
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Fibroblasts",
+      "value": 0.0376
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Macrophages",
+      "value": 0.3816
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "MAIT cells",
+      "value": 0.5007
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Mast cells",
+      "value": 0.3491
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Memory B cells",
+      "value": 0.4077
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Migratory DCs",
+      "value": 0.1866
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "NK cells",
+      "value": 0.0985
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "NKT cells",
+      "value": 0.4495
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Non-classical monocytes",
+      "value": 0.4569
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "pDC",
+      "value": 0.0661
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Plasma cells",
+      "value": 0.1086
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Regulatory T cells",
+      "value": 0.481
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Tem/Effector helper T cells",
+      "value": 0.3892
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 0.431
+    },
+    {
+      "source": "Non-classical monocytes",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.4783
+    },
+    {
+      "source": "pDC",
+      "target": "CD16- NK cells",
+      "value": 0.3242
+    },
+    {
+      "source": "pDC",
+      "target": "CD16+ NK cells",
+      "value": 0.1191
+    },
+    {
+      "source": "pDC",
+      "target": "Classical monocytes",
+      "value": 0.3275
+    },
+    {
+      "source": "pDC",
+      "target": "DC1",
+      "value": 0.2771
+    },
+    {
+      "source": "pDC",
+      "target": "DC2",
+      "value": 0.5069
+    },
+    {
+      "source": "pDC",
+      "target": "Endothelial cells",
+      "value": 0.1392
+    },
+    {
+      "source": "pDC",
+      "target": "Epithelial cells",
+      "value": 0.019
+    },
+    {
+      "source": "pDC",
+      "target": "Macrophages",
+      "value": 0.4216
+    },
+    {
+      "source": "pDC",
+      "target": "MAIT cells",
+      "value": 0.1216
+    },
+    {
+      "source": "pDC",
+      "target": "Memory B cells",
+      "value": 0.5374
+    },
+    {
+      "source": "pDC",
+      "target": "Migratory DCs",
+      "value": 0.511
+    },
+    {
+      "source": "pDC",
+      "target": "NKT cells",
+      "value": 0.1342
+    },
+    {
+      "source": "pDC",
+      "target": "Non-classical monocytes",
+      "value": 0.4072
+    },
+    {
+      "source": "pDC",
+      "target": "pDC",
+      "value": 0.3388
+    },
+    {
+      "source": "pDC",
+      "target": "Plasma cells",
+      "value": 0.0191
+    },
+    {
+      "source": "pDC",
+      "target": "Regulatory T cells",
+      "value": 0.3802
+    },
+    {
+      "source": "pDC",
+      "target": "Tem/Effector helper T cells",
+      "value": 0.1194
+    },
+    {
+      "source": "pDC",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.3911
+    },
+    {
+      "source": "Plasma cells",
+      "target": "Classical monocytes",
+      "value": 0.2015
+    },
+    {
+      "source": "Plasma cells",
+      "target": "DC2",
+      "value": 0.1126
+    },
+    {
+      "source": "Plasma cells",
+      "target": "Fibroblasts",
+      "value": 0.0325
+    },
+    {
+      "source": "Plasma cells",
+      "target": "Macrophages",
+      "value": 0.1189
+    },
+    {
+      "source": "Plasma cells",
+      "target": "Non-classical monocytes",
+      "value": 0.0148
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "CD16- NK cells",
+      "value": 0.4385
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "CD16+ NK cells",
+      "value": 0.4099
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Classical monocytes",
+      "value": 0.7836
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "DC1",
+      "value": 0.506
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "DC2",
+      "value": 0.6907
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Endothelial cells",
+      "value": 0.3255
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Epithelial cells",
+      "value": 0.0593
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Fibroblasts",
+      "value": 0.0822
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Macrophages",
+      "value": 0.5994
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "MAIT cells",
+      "value": 0.3869
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Memory B cells",
+      "value": 0.6727
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Migratory DCs",
+      "value": 0.6888
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "NKT cells",
+      "value": 0.4493
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Non-classical monocytes",
+      "value": 0.5595
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "pDC",
+      "value": 0.4555
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Plasma cells",
+      "value": 0.1669
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Regulatory T cells",
+      "value": 0.5137
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Tem/Effector helper T cells",
+      "value": 0.4139
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 0.4161
+    },
+    {
+      "source": "Regulatory T cells",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.5284
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "CD16- NK cells",
+      "value": 0.4837
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "CD16+ NK cells",
+      "value": 0.4522
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "Classical monocytes",
+      "value": 1.7077
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "DC1",
+      "value": 0.5577
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "DC2",
+      "value": 0.9835
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "Endothelial cells",
+      "value": 0.0796
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "Fibroblasts",
+      "value": 0.1106
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "Macrophages",
+      "value": 0.7813
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "MAIT cells",
+      "value": 0.427
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "Memory B cells",
+      "value": 0.7411
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "Migratory DCs",
+      "value": 0.7587
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "NKT cells",
+      "value": 0.4956
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "Non-classical monocytes",
+      "value": 0.9061
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "pDC",
+      "value": 0.6413
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "Plasma cells",
+      "value": 0.1842
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "Regulatory T cells",
+      "value": 0.5665
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "Tem/Effector helper T cells",
+      "value": 0.4567
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 0.459
+    },
+    {
+      "source": "Tem/Effector helper T cells",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.5826
+    },
+    {
+      "source": "Tem/Temra cytotoxic T cells",
+      "target": "Classical monocytes",
+      "value": 1.4059
+    },
+    {
+      "source": "Tem/Temra cytotoxic T cells",
+      "target": "DC2",
+      "value": 0.265
+    },
+    {
+      "source": "Tem/Temra cytotoxic T cells",
+      "target": "Endothelial cells",
+      "value": 0.1248
+    },
+    {
+      "source": "Tem/Temra cytotoxic T cells",
+      "target": "Epithelial cells",
+      "value": 0.0226
+    },
+    {
+      "source": "Tem/Temra cytotoxic T cells",
+      "target": "Fibroblasts",
+      "value": 0.441
+    },
+    {
+      "source": "Tem/Temra cytotoxic T cells",
+      "target": "Macrophages",
+      "value": 0.2933
+    },
+    {
+      "source": "Tem/Temra cytotoxic T cells",
+      "target": "Non-classical monocytes",
+      "value": 0.3448
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "CD16- NK cells",
+      "value": 0.4292
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "CD16+ NK cells",
+      "value": 0.4012
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Classical monocytes",
+      "value": 1.879
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "DC1",
+      "value": 0.5192
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "DC2",
+      "value": 0.8604
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Endothelial cells",
+      "value": 0.1184
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Epithelial cells",
+      "value": 0.0214
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Fibroblasts",
+      "value": 0.5531
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Macrophages",
+      "value": 0.8548
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "MAIT cells",
+      "value": 0.3787
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Memory B cells",
+      "value": 0.6586
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Migratory DCs",
+      "value": 0.6743
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "NKT cells",
+      "value": 0.4397
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Non-classical monocytes",
+      "value": 0.7875
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "pDC",
+      "value": 0.4461
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Plasma cells",
+      "value": 0.1633
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Regulatory T cells",
+      "value": 0.5029
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Tem/Effector helper T cells",
+      "value": 0.4051
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Tem/Temra cytotoxic T cells",
+      "value": 0.4072
+    },
+    {
+      "source": "Tem/Trm cytotoxic T cells",
+      "target": "Tem/Trm cytotoxic T cells",
+      "value": 0.5172
+    }
+  ]
+}

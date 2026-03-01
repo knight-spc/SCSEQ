@@ -637,9 +637,265 @@
         </template>
       </n-split>
     </el-tab-pane>
+  <el-tab-pane
+      :label="$t('scenic.tabTitle')"
+      name="eighth"
+      v-loading="scenic.loading"
+      :element-loading-text="$t('common.processing')"
+      element-loading-background="rgba(0, 0, 0, 0.5)"
+      style="position: relative; min-height: 200px"
+    >
+      <!-- 标题 -->
+      <el-row>
+        {{ $t("scenic.resultTitle") }}
+        <el-tooltip
+          class="box-item"
+          effect="dark"
+          :content="$t('common.manual')"
+          placement="top"
+        >
+          <el-button text size="small" @click="jumpToTutorial('scenic')">
+            <el-icon><QuestionFilled /></el-icon>
+          </el-button>
+        </el-tooltip>
+      <el-button
+          type="primary"
+          :loading="scenic.loading_button"
+          @click="performSCENICAnalysis"
+          style="margin-right: 20px"
+        >
+          {{ $t("scenic.runSCENIC") }}
+        </el-button>
+        </el-row>
+      <br>
+      <!-- TF因子选择 -->
+              <el-select-v2
+                v-model="scenic.tfvalue"
+                filterable
+                :options="scenic.tf_list"
+                @focus="fetchTF"          
+                :placeholder="$t('scenic.selecttf')"
+                style="width: 200px; margin-right: 16px"
+                multiple
+              />
+              <el-button
+                type="primary"
+                :loading="scenic.loading_button"
+                @click="handleSubmitSelection_tf"
+              >
+                {{ $t("scenic.generatePlot") }}
+              </el-button>
+              <el-button
+        type="primary"
+        :loading="scenic.loading_button"
+        @click="QueryLatestResult_tf"
+      >
+        {{ $t("common.queryResult") }}
+      </el-button>
+
+
+      <!-- 图片展示 -->
+      <div class="photo-gallery">
+        <div class="gallery-row">
+          <div class="photo-item">
+            <h3>{{ $t("scenic.plot1") }}</h3>
+            <template v-if="scenic.img_heatmap && scenic.img_heatmap.length > 0">
+              <el-image
+                v-for="path in scenic.img_heatmap"
+                :key="path"
+                lazy
+                :src="require('../assets/result/' + path)"
+                :preview-src-list="[require('../assets/result/' + path)]"
+                fit="contain"
+              >
+                <template #toolbar="{ actions, reset }">
+                  <el-icon @click="actions('zoomOut')"><ZoomOut /></el-icon>
+                  <el-icon
+                    @click="actions('zoomIn', { enableTransition: false, zoomRate: 2 })"
+                  >
+                    <ZoomIn />
+                  </el-icon>
+                  <el-icon
+                    @click="
+                      actions('clockwise', { rotateDeg: 180, enableTransition: false })
+                    "
+                  >
+                    <RefreshRight />
+                  </el-icon>
+                  <el-icon @click="actions('anticlockwise')">
+                    <RefreshLeft />
+                  </el-icon>
+                  <el-icon @click="reset"><Refresh /></el-icon>
+                  <el-icon @click="downloadImage(require('../assets/result/' + path))">
+                    <Download />
+                  </el-icon>
+                </template>
+              </el-image>
+            </template>
+            <template v-else>
+              <div class="empty-placeholder">
+                <el-icon :size="32"><icon-picture /></el-icon>
+                <p>{{ $t("common.noImage") }}</p>
+              </div>
+            </template>
+          </div>
+
+          <div class="photo-item">
+            <h3>{{ $t("scenic.plot2") }}</h3>
+            <template v-if="scenic.img_dotplot && scenic.img_dotplot.length > 0">
+              <el-image
+                v-for="path in scenic.img_dotplot"
+                :key="path"
+                lazy
+                :src="require('../assets/result/' + path)"
+                :preview-src-list="[require('../assets/result/' + path)]"
+                fit="contain"
+              >
+                <template #toolbar="{ actions, reset }">
+                  <el-icon @click="actions('zoomOut')"><ZoomOut /></el-icon>
+                  <el-icon
+                    @click="actions('zoomIn', { enableTransition: false, zoomRate: 2 })"
+                  >
+                    <ZoomIn />
+                  </el-icon>
+                  <el-icon
+                    @click="
+                      actions('clockwise', { rotateDeg: 180, enableTransition: false })
+                    "
+                  >
+                    <RefreshRight />
+                  </el-icon>
+                  <el-icon @click="actions('anticlockwise')">
+                    <RefreshLeft />
+                  </el-icon>
+                  <el-icon @click="reset"><Refresh /></el-icon>
+                  <el-icon @click="downloadImage(require('../assets/result/' + path))">
+                    <Download />
+                  </el-icon>
+                </template>
+              </el-image>
+            </template>
+            <template v-else>
+              <div class="empty-placeholder">
+                <el-icon :size="32"><icon-picture /></el-icon>
+                <p>{{ $t("common.noImage") }}</p>
+              </div>
+            </template>
+          </div>
+        </div>
+
+        <div class="gallery-row">
+          <div class="photo-item">
+            <h3>{{ $t("scenic.plot3") }}</h3>
+            <template v-if="scenic.img_umap && scenic.img_umap.length > 0">
+              <el-image
+                v-for="path in scenic.img_umap"
+                :key="path"
+                lazy
+                :src="require('../assets/result/' + path)"
+                :preview-src-list="[require('../assets/result/' + path)]"
+                fit="contain"
+              >
+                <template #toolbar="{ actions, reset }">
+                  <el-icon @click="actions('zoomOut')">
+                    <ZoomOut />
+                  </el-icon>
+                  <el-icon
+                    @click="actions('zoomIn', { enableTransition: false, zoomRate: 2 })"
+                  >
+                    <ZoomIn />
+                  </el-icon>
+                  <el-icon
+                    @click="
+                      actions('clockwise', { rotateDeg: 180, enableTransition: false })
+                    "
+                  >
+                    <RefreshRight />
+                  </el-icon>
+                  <el-icon @click="actions('anticlockwise')">
+                    <RefreshLeft />
+                  </el-icon>
+                  <el-icon @click="reset">
+                    <Refresh />
+                  </el-icon>
+                  <el-icon @click="downloadImage(require('../assets/result/' + path))">
+                    <Download />
+                  </el-icon>
+                </template>
+                <template #error>
+                  <div class="image-slot">
+                    <el-icon><icon-picture /></el-icon>
+                  </div>
+                </template>
+              </el-image>
+            </template>
+            <template v-else>
+              <div class="empty-placeholder">
+                <el-icon :size="32"><icon-picture /></el-icon>
+                <p>{{ $t("common.noImage") }}</p>
+              </div>
+            </template>
+          </div>
+
+          <div class="photo-item">
+            <h3>{{ $t("scenic.plot4") }}</h3>
+            <template v-if="scenic.img_vlnplot && scenic.img_vlnplot.length > 0">
+              <el-image
+                v-for="path in scenic.img_vlnplot"
+                :key="path"
+                lazy
+                :src="require('../assets/result/' + path)"
+                :preview-src-list="[require('../assets/result/' + path)]"
+                fit="contain"
+              >
+                <template #toolbar="{ actions, reset }">
+                  <el-icon @click="actions('zoomOut')">
+                    <ZoomOut />
+                  </el-icon>
+                  <el-icon
+                    @click="actions('zoomIn', { enableTransition: false, zoomRate: 2 })"
+                  >
+                    <ZoomIn />
+                  </el-icon>
+                  <el-icon
+                    @click="
+                      actions('clockwise', { rotateDeg: 180, enableTransition: false })
+                    "
+                  >
+                    <RefreshRight />
+                  </el-icon>
+                  <el-icon @click="actions('anticlockwise')">
+                    <RefreshLeft />
+                  </el-icon>
+                  <el-icon @click="reset">
+                    <Refresh />
+                  </el-icon>
+                  <el-icon @click="downloadImage(require('../assets/result/' + path))">
+                    <Download />
+                  </el-icon>
+                </template>
+                <template #error>
+                  <div class="image-slot">
+                    <el-icon><icon-picture /></el-icon>
+                  </div> </template
+              ></el-image>
+            </template>
+            <template v-else>
+              <div class="empty-placeholder">
+                <el-icon :size="32"><icon-picture /></el-icon>
+                <p>{{ $t("common.noImage") }}</p>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+
+
+    </el-tab-pane>
 
   </el-tabs>
 </template>
+
 <script>
 import axios from "axios";
 import { ElMessage, ElMessageBox } from "element-plus";
@@ -820,6 +1076,18 @@ export default {
         choose_cluster: "",
         bar_data: [],
         clusters: [], // 存储下拉框选项，用于存储细胞群序号
+      },
+      scenic: {
+        loading: false,
+        loading_button: false,
+        dialogFormVisible: false,
+        tf_list: [],
+        tfvalue: [], 
+
+        img_umap: [],
+        img_dotplot: [],
+        img_heatmap: [],
+        img_vlnplot: [],
       },
       reference_example: require("../assets/images/reference_example.png"),
     };
@@ -1714,6 +1982,93 @@ export default {
         }
       }
     },
+        // SCENIC
+    // 获取TF列表
+    async fetchTF() {
+      try {
+        const response = await get("get_tf");
+        this.scenic.tf_list = response.data.tf_list;
+      } catch (error) {
+        console.error("获取TF列表失败：", error);
+        ElMessage.error(
+          "获取TF列表失败：" + (error.response?.data?.message || error.message)
+        );
+      }
+    },
+    async performSCENICAnalysis() {
+      this.scenic.loading = true; // 开始loading
+      try {
+        const response = await post("perform_SCENIC_analysis");
+
+        if (response.data.success) {
+        } else {
+          ElMessage.error(response.data.message || "分析失败");
+        }
+      } catch (error) {
+        console.error("SCENIC分析失败:", error);
+        ElMessage.error("分析过程出错，请稍后重试");
+      } finally {
+        this.scenic.loading = false;
+      }
+    },
+
+    async handleSubmitSelection_tf() {
+      if (!this.scenic.tfvalue || this.scenic.tfvalue.length === 0) {
+        ElMessage.warning("请至少选择一个选项");
+        return;
+      }
+
+      this.scenic.loading_button = true;
+      try {
+        const response = await post("selection_tf", {
+          selected_items: this.scenic.tfvalue,
+          query: false,
+          taskId: this.task_id,
+        });
+        this.scenic.img_umap = response.data.img_umap || [];
+        this.scenic.img_dotplot = response.data.img_dotplot || [];
+        this.scenic.img_heatmap = response.data.img_heatmap || [];
+        this.scenic.img_vlnplot = response.data.img_vlnplot || [];
+        console.log("this.scenic.img_vlnplot", this.tcga.img_vlnplot);
+      } catch (error) {
+        const errorMsg = error.response?.data?.message || error.message || "未知错误";
+        this.$message.error("提交失败：" + errorMsg);
+        this.scenic.img_umap = [];
+        this.scenic.img_dotplot = [];
+        this.scenic.img_heatmap = [];
+        this.scenic.img_vlnplot = [];
+      } finally {
+        this.scenic.loading_button = false;
+      }
+    },
+
+    async QueryLatestResult_tf() {
+      this.scenic.loading_button = true;
+      try {
+        const response = await post("selection_tf", {
+          query: true,
+          taskId: this.task_id,
+        });
+        this.scenic.img_umap = response.data.img_umap || [];
+        this.scenic.img_dotplot = response.data.img_dotplot || [];
+        this.scenic.img_heatmap = response.data.img_heatmap || [];
+        this.scenic.img_vlnplot = response.data.img_vlnplot || [];
+      } catch (error) {
+        const errorMsg = error.response?.data?.message || error.message || "未知错误";
+        if (msg.includes("缺少文件，请先执行")) {
+          this.$message.error(msg);
+        } else {
+          this.$message.error("获取SCENIC最新结果失败：" + msg);
+        }        
+        this.scenic.img_umap = [];
+        this.scenic.img_dotplot = [];
+        this.scenic.img_heatmap = [];
+        this.scenic.img_vlnplot = [];
+      } finally {
+        this.scenic.loading_button = false;
+      }
+    },
+
 
     // 更新图表选项
     updateChartOption() {

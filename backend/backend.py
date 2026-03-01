@@ -1388,6 +1388,253 @@ def fetch_go_figure():
             "message": str(e)
         }), 500
 
+
+############SCENIC分析############
+@app.route('/api/perform_SCENIC_analysis', methods=['POST'])
+def perform_SCENIC_analysis():
+    try:
+        item_id = request.headers.get('Item-Id')
+        print("item_id",item_id)
+        if not item_id:
+            return jsonify({
+                "status": "error",
+                "message": "未登录或登录已过期"
+            }), 401
+        
+        annotation_model = "cluster"
+        work_path = database.get_item_workpath(item_id)[0]
+        task = database.get_latest_task_by_type(item_id=item_id, task_type="Annotation")
+        if task:
+            task_id, item_id, type, parameter, result_path, task_time, sh_id = task
+            umap_data_path = result_path
+            annotation_model = parameter["annotation_model"]
+        else:
+            umap_data_path = os.path.join(work_path, 'umap_data.csv')
+
+
+        expression_matrix_v_path = os.path.join(work_path, "expression_matrix_v.tsv")
+        work_path = os.path.join(work_path, 'SCENIC')
+        if not os.path.exists(work_path):
+            os.makedirs(work_path)
+        expression_matrix_fixed_path = os.path.join(work_path, "expression_matrix_fixed.tsv")
+        adjacencies = os.path.join(work_path, "adjacencies.tsv")
+        regulons = os.path.join(work_path, "regulons.csv")
+        auc_mtx = os.path.join(work_path, "auc_mtx.csv")
+
+        expression_matrix_v = pd.read_csv(expression_matrix_v_path, sep="\t", index_col=0)
+        
+        import pyarrow.feather as feather
+        db = feather.read_table("/public-SSD/home/sunpc/scseq/backend/pth/SCENIC/hg38_10kbp_up_10kbp_down_full_tx_v10_clust.genes_vs_motifs.rankings.feather")
+        genes = db.column_names
+        db2 = feather.read_table("/public-SSD/home/sunpc/scseq/backend/pth/SCENIC/hg38_500bp_up_100bp_down_full_tx_v10_clust.genes_vs_motifs.rankings.feather")
+        genes2 = db2.column_names
+        gene = genes + genes2
+        a = set(gene)
+        b = list(a)
+        filtered_expression_matrix_t = expression_matrix_v[expression_matrix_v.index.isin(b)]
+
+        expression_matrix_vt = filtered_expression_matrix_t.T
+        print("Transposed shape:", expression_matrix_vt.shape)
+        expression_matrix_vt.to_csv(expression_matrix_fixed_path, sep="\t")
+
+        # grn
+        command = (
+            "pyscenic grn "
+            f"{expression_matrix_fixed_path} "
+            "/public-SSD/home/sunpc/scseq/backend/pth/SCENIC/tf_list.txt "
+            f"-o {adjacencies} "
+            "--num_workers 8"
+        )
+        sh_path = "scenic_grn.sh"
+        result_paths = {
+            "adjacencies": adjacencies,
+            "regulons": regulons,
+            "auc_mtx": auc_mtx
+        }
+        param = {
+            "item_id": item_id,
+            "task_type": "SCENIC",
+            "parameter": {"annotation_model":annotation_model},
+            "result_path": result_paths
+        }
+        job_id,_ = runsh_item(command, sh_path, param)  
+
+        # ctx
+        command = ("pyscenic ctx "
+        f"{adjacencies} "
+        "/public-SSD/home/sunpc/scseq/backend/pth/SCENIC/hg38_10kbp_up_10kbp_down_full_tx_v10_clust.genes_vs_motifs.rankings.feather "
+        "/public-SSD/home/sunpc/scseq/backend/pth/SCENIC/hg38_500bp_up_100bp_down_full_tx_v10_clust.genes_vs_motifs.rankings.feather "
+        "--annotations_fname /public-SSD/home/sunpc/scseq/backend/pth/SCENIC/motifs-v10nr_clust-nr.hgnc-m0.001-o0.0.tbl "
+        f"--expression_mtx_fname {expression_matrix_fixed_path} "
+        '--mode "dask_multiprocessing" '
+        "--num_workers 8 "
+        f"-o {regulons}")
+        sh_path = "scenic_ctx.sh"
+        job_id = runsh_item_update(command, sh_path, job_id)
+        time.sleep(3)
+
+        # auc
+        command = (f"pyscenic aucell {expression_matrix_fixed_path} {regulons} "
+        "--num_workers 8 "
+        f"-o {auc_mtx}")
+        sh_path = "scenic_auc.sh"
+        job_id = runsh_item_update(command, sh_path, job_id)
+
+        return jsonify({
+            'success': True,
+            'message': '分析完成'
+        })
+        
+    except Exception as e:
+        print(f"SCENIC: {str(e)}")
+        return jsonify({
+            'success': False,
+            'message': str(e)
+        }), 500
+    
+@app.route('/api/get_tf', methods=['GET'])
+def get_tf():
+    try:
+        item_id = request.headers.get('Item-Id')
+        print("item_id", item_id)
+        if not item_id:
+            return jsonify({
+                "status": "error",
+                "message": "未登录或登录已过期"
+            }), 401
+
+        work_path = database.get_item_workpath(item_id)[0]
+        task = database.get_latest_task_by_type(item_id=item_id, task_type="SCENIC")
+        if task:
+            task_id, item_id, type, parameter, result_path, task_time, sh_id = task
+            auc_mtx = result_path["auc_mtx"]
+        else:
+            return jsonify({
+                "status": "error",
+                "message": "请先执行SCENIC分析"
+            }), 401
+        
+        auc_data = pd.read_csv(auc_mtx).columns[1:]
+        tf_list = [i.replace("(+)",'') for i in auc_data]
+        tf_list = [{'value': i, 'label': i} for i in tf_list]
+        print(tf_list)
+
+        return jsonify({"tf_list": tf_list}), 200
+
+    except Exception as e:
+        print(f"获取TF列表失败: {str(e)}")
+        return jsonify({
+            "status": "error",
+            "message": str(e)
+        }), 500
+
+@app.route('/api/selection_tf', methods=['POST'])
+def selection_tf():
+    try:
+        item_id = request.headers.get('Item-Id')
+        print("item_id", item_id)
+        if not item_id:
+            return jsonify({
+                "status": "error",
+                "message": "未登录或登录已过期"
+            }), 401
+
+        work_path = database.get_item_workpath(item_id)[0]
+        data = request.get_json()
+        query = data.get('query', '')
+
+        latest = False
+        path_pdf_umap = None
+        path_pdf_dotplot = None
+        path_pdf_heatmap = None
+        path_pdf_vlnplot = None
+        if query:
+            task_id = data.get('taskId', '')
+            if task_id:
+                task = database.get_task_by_id(task_id)
+                if task: 
+                    _, _, task_type, _, result_path, _, _ = task
+                    if task_type == 'SCENIC_plot':
+                        path_pdf_umap = result_path.get("path_pdf_umap")
+                        path_pdf_dotplot = result_path.get("path_pdf_dotplot")
+                        path_pdf_heatmap = result_path.get("path_pdf_heatmap")
+                        path_pdf_vlnplot = result_path.get("path_pdf_vlnplot")
+                    else: latest = True
+                else: 
+                    latest = True
+            else: latest = True
+            if latest:
+                task = database.get_latest_task_by_type(item_id=item_id, task_type="SCENIC_plot")
+                if task:
+                    _, _, _, parameter, result_path, _, _ = task
+                    path_pdf_umap = result_path.get("path_pdf_umap")
+                    path_pdf_dotplot = result_path.get("path_pdf_dotplot")
+                    path_pdf_heatmap = result_path.get("path_pdf_heatmap")
+                    path_pdf_vlnplot = result_path.get("path_pdf_vlnplot")
+                else:
+                    return jsonify({
+                        "status": "error",
+                        "message": "暂无历史任务"
+                    }), 404
+        else:
+            selected_items = data.get('selected_items', [])
+            print("selected_items:", selected_items)
+            Rpath = "/public-SSD/home/sunpc/scseq/backend/R/SCENIC.R"
+            wd_path = work_path
+            timestamp = int(time.time() * 1000)
+            SelectionList = ','.join(selected_items)
+            command = f'''Rscript {Rpath} -w "{wd_path}" -t "{timestamp}" -s "{SelectionList}"'''
+            sh_path = 'scenic.sh'
+            path_pdf_umap = os.path.join(wd_path, 'SCENIC', f'1.SCENIC_UMAP_{timestamp}.pdf')
+            path_pdf_dotplot = os.path.join(wd_path, 'SCENIC', f'2.SCENIC_DotPlot_{timestamp}.pdf')
+            path_pdf_heatmap = os.path.join(wd_path, 'SCENIC', f'3.SCENIC_Heatmap_{timestamp}.pdf')
+            path_pdf_vlnplot = os.path.join(wd_path, 'SCENIC', f'4.SCENIC_Violin_{timestamp}.pdf')
+
+            annotation_model = "cluster"
+            task = database.get_latest_task_by_type(item_id=item_id, task_type="Annotation")
+            if task:
+                task_id, item_id, type, parameter, result_path, task_time, sh_id = task
+                annotation_model = parameter["annotation_model"]
+            param = {
+                "item_id": item_id,
+                "task_type": "SCENIC_plot",
+                "parameter": {
+                    "SelectionTFList": SelectionList,
+                    "annotation_model": annotation_model
+                },
+                "result_path": {
+                            "path_pdf_umap": path_pdf_umap,
+                            "path_pdf_dotplot": path_pdf_dotplot,
+                            "path_pdf_heatmap": path_pdf_heatmap,
+                            "path_pdf_vlnplot": path_pdf_vlnplot
+                },
+            }
+
+            job_id,_ = runsh_item(command, sh_path, param)
+            time.sleep(5)
+
+        img_umap = pdf_to_png(path_pdf_umap)
+        img_dotplot = pdf_to_png(path_pdf_dotplot)
+        img_heatmap = pdf_to_png(path_pdf_heatmap)
+        img_vlnplot = pdf_to_png(path_pdf_vlnplot)
+
+        time.sleep(2.5)
+        return jsonify({
+            "status": "success",
+            "img_umap": img_umap,
+            "img_dotplot": img_dotplot,
+            "img_heatmap": img_heatmap,
+            "img_vlnplot": img_vlnplot
+        }), 200
+
+    except Exception as e:
+        print(f"发生错误: {str(e)}")
+        return jsonify({
+            "status": "error",
+            "message": str(e)
+        }), 500
+
+
 @app.route('/api/get_all_tasks', methods=['GET'])
 def get_all_tasks():
     conn = sqlite3.connect('tasks.db')

@@ -1,0 +1,216 @@
+{
+  "home": {
+    "title": {
+      "line1": "单细胞转录组",
+      "line2": "测序分析云平台"
+    }
+  },
+  "login": {
+    "title": "单细胞转录组测序分析云平台",
+    "username": "用户名",
+    "password": "密码",
+    "phone": "手机号",
+    "usernamePlaceholder": "请输入用户名",
+    "passwordPlaceholder": "请输入密码",
+    "phonePlaceholder": "请输入手机号",
+    "loginButton": "登录",
+    "registerButton": "注册",
+    "firstLogin": "首次登陆？",
+    "hasAccount": "已有账号？",
+    "goRegister": "去注册",
+    "goLogin": "去登录",
+    "loginOrRegister": "登录 / 注册"
+  },
+  "user": {
+    "profile": "个人中心",
+    "logout": "退出登录"
+  },
+  "loginBenefits": {
+    "title": "登录后可享受以下权益：",
+    "fullFeatures": "更全面的功能",
+    "richVisualization": "更丰富的可视化",
+    "efficientWorkflow": "更高效的创作环境"
+  },
+  "sidebar": {
+    "systemUser": "系统用户",
+    "userManagement": "用户管理",
+    "userInfo": "用户信息",
+    "analysis": "测序分析",
+    "projectManagement": "项目管理",
+    "parameterSetting": "设定参数",
+    "visualization": "查看可视化结果",
+    "moreInfo": "更多信息"
+  },
+  "route": {
+    "welcome": "欢迎页",
+    "userManagement": "用户管理",
+    "changePassword": "修改密码",
+    "projectManagement": "项目管理",
+    "parameterSetting": "设定参数",
+    "results": "计算结果",
+    "intelligentAnalysis": "智能分析",
+    "loginin": "登录",
+    "register": "注册"
+  },
+  "project": {
+    "title": "我的项目",
+    "newProject": "新建项目",
+    "manual": "介绍手册",
+    "noDescription": "暂无描述",
+    "uploadTitle": "上传数据",
+    "projectName": "项目名称",
+    "species": "物种信息",
+    "selectSpecies": "请选择物种信息",
+    "otherSpecies": "其他",
+    "projectNotes": "项目备注",
+    "uploadHint": "请在这里上传测序数据",
+    "uploadText1": "将文件拖到此处或",
+    "uploadText2": "点击上传",
+    "uploadTip": "注意：打包前请保证文件格式正确",
+    "formatRequirement": "上传文件的格式要求："
+  },
+  "task": {
+    "title": "任务信息",
+    "type": "任务类型",
+    "parameter": "参数",
+    "status": "运行状态",
+    "running": "进行中",
+    "finished": "已完成",
+    "submitTime": "提交时间"
+  },
+  "parameter": {
+    "title": "参数设置",
+    "qcPlots": "QC 图",
+    "enable": "是否启用",
+    "clusteringMethod": "聚类方法",
+    "method1": "方法一",
+    "method2": "方法二",
+    "rules": {
+      "nCountRequired": "nCount_RNA不能为空",
+      "nFeatureRequired": "nFeature_RNA不能为空",
+      "percentMTRequired": "percent_MT不能为空",
+      "percentHBRequired": "percent_HB不能为空",
+      "mustBeNumber": "必须为数字值"
+    }
+  },
+  "annotation": {
+    "tabTitle": "细胞注释",
+    "dimPlot": "DimPlot",
+    "viewUmap": "点击查看 UMAP 图",
+    "selectModel": "请选择注释模型",
+    "uploadTitle": "上传数据",
+    "modelName": "模型名称",
+    "uploadHint": "请在这里上传参考数据集",
+    "uploadTip": "注意：上传前请保证文件格式正确",
+    "formatRequirement": "上传文件的格式要求：",
+    "annotationColumnHint": "请将您的注释放入 Annotation 列中",
+    "calculateMarker": "计算 Marker 基因",
+    "largeModel": "大模型辅助注释",
+    "largeModelResult": "大模型辅助预测结果",
+    "originResult": "原注释结果",
+    "largeResult": "大模型注释结果",
+    "reason": "推断依据",
+    "qcViolin": "QC 小提琴图",
+    "cellProportion": "基于自动注释的细胞比例图",
+    "selectView": "选择视图",
+    "rules": {
+      "modelNameRequired": "模型名称不能为空",
+      "modelNamePattern": "模型名称只能包含字母、数字和下划线"
+    }
+  },
+  "enrichment": {
+    "tabTitle": "基因富集分析",
+    "markerTable": "标记基因表",
+    "dotPlot": "DotPlot",
+    "markerNum": "请选择每组标记基因的数目",
+    "goEnrichment": "GO 富集分析",
+    "selectCluster": "请选择细胞群",
+    "qcViolin": "QC 小提琴图",
+    "viewSignificance": "查看显著性结果",
+    "significanceTitle": "显著性分析",
+    "selectTwoCells": "请选择两个细胞类型",
+    "featurePlot": "特征基因表达图"
+  },
+  "scenic": {
+    "tabTitle": "转录因子调控网络分析",
+    "resultTitle": "转录因子调控网络分析结果",
+    "selecttf": "选择转录因子",
+    "generatePlot": "生成图表",
+    "runSCENIC": "进行SCENIC分析",
+
+    "plot1": "各细胞类型平均调控子活性的热图",
+    "plot2": "不同细胞类型中的调控子活性",
+    "plot3": "调控子活性的UMAP可视化",
+    "plot4": "调控子活性分布",
+    "correlation": "相关性",
+    "pvalue": "P 值",
+    "result": "结果",
+    "plot1Params": "表达分布图参数设置",
+    "outlierSize": "离群点大小",
+    "frameSize": "边框粗细",
+    "parameterSetting": "设定参数"
+  },
+  "communication": {
+    "tabTitle": "细胞通讯分析",
+    "runAnalysis": "进行细胞通讯分析",
+    "count": "数量",
+    "weight": "权重",
+    "circlePlot": "圆形网络图",
+    "heatmap": "热点图"
+  },
+  "cnv": {
+    "tabTitle": "拷贝数变异分析",
+    "allCells": "所有细胞",
+    "selectedCells": "选中的细胞",
+    "selectReferenceCells": "选择参考细胞",
+    "referenceSelectionResult": "参考细胞选择结果：",
+    "referenceTip": "被选中的细胞将作为参考集",
+    "resultTitle": "inferCNV 分析结果"
+  },
+  "pseudotime": {
+    "tabTitle": "拟时序分析",
+    "allCells": "所有细胞",
+    "selectedCells": "选中的细胞",
+    "trajectory": "细胞轨迹",
+    "selectGenes": "选择基因",
+    "generatePlot": "生成图表"
+  },
+  "tcga": {
+    "tabTitle": "泛癌分析（TCGA）",
+    "resultTitle": "泛癌分析结果",
+    "selectGene": "选择基因",
+    "plot1": "表达分布",
+    "plot2": "生存分析",
+    "plot3": "DNA 甲基化",
+    "plot4": "免疫浸润（TIMER）",
+    "correlation": "相关性",
+    "pvalue": "P 值",
+    "result": "结果",
+    "plot1Params": "表达分布图参数设置",
+    "outlierSize": "离群点大小",
+    "frameSize": "边框粗细",
+    "parameterSetting": "设定参数"
+
+  },
+  "common": {
+    "view": "查看",
+    "delete": "删除",
+    "action": "操作",
+    "reset": "重置",
+    "downloadCSV": "下载为 CSV",
+    "selectAll": "全选",
+    "deselectAll": "全不选",
+    "submit": "提交",
+    "noData": "暂无数据",
+    "noImage": "暂无图片",
+    "processing": "处理中...",
+    "manual": "介绍手册",
+    "uploadText1": "将文件拖到此处或",
+    "uploadText2": "点击上传",
+    "uploadFailed": "上传失败",
+    "cancel": "取消",
+    "confirm": "确定",
+    "pleaseSelect": "请选择",
+    "queryResult": "查询结果"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "home": {
+    "title": {
+      "line1": "Single-cell Transcriptomics Sequencing Analysis",
+      "line2": "Cloud Platform"
+    }
+  },
+  "login": {
+    "title": "Single-cell Transcriptomics Sequencing Analysis Cloud Platform",
+    "username": "Username",
+    "password": "Password",
+    "phone": "Phone Number",
+    "usernamePlaceholder": "Enter your username",
+    "passwordPlaceholder": "Enter your password",
+    "phonePlaceholder": "Enter your phone number",
+    "loginButton": "Log In",
+    "registerButton": "Register",
+    "firstLogin": "First time here?",
+    "hasAccount": "Already have an account?",
+    "goRegister": "Sign up",
+    "goLogin": "Log in",
+    "loginOrRegister": "Log in / Sign up"
+  },
+  "user": {
+    "profile": "Profile",
+    "logout": "Log out"
+  },
+  "loginBenefits": {
+    "title": "Sign in to enjoy the following benefits:",
+    "fullFeatures": "Access to more comprehensive features",
+    "richVisualization": "Richer and more interactive visualizations",
+    "efficientWorkflow": "A more efficient analytical workflow"
+  },
+  "sidebar": {
+    "systemUser": "System Users",
+    "userManagement": "User Management",
+    "userInfo": "User Information",
+    "analysis": "Sequencing Analysis",
+    "projectManagement": "Project Management",
+    "parameterSetting": "Parameter Settings",
+    "visualization": "View Visualization Results",
+    "moreInfo": "More Information"
+  },
+  "route": {
+    "welcome": "Welcome",
+    "userManagement": "User Management",
+    "changePassword": "Change Password",
+    "projectManagement": "Project Management",
+    "parameterSetting": "Parameter Settings",
+    "results": "Results",
+    "intelligentAnalysis": "Intelligent Analysis",
+    "loginin": "Log In",
+    "register": "Register"
+  },
+  "project": {
+    "title": "My Projects",
+    "newProject": "New Project",
+    "manual": "User Manual",
+    "noDescription": "No description available",
+    "uploadTitle": "Upload Data",
+    "projectName": "Project Name",
+    "species": "Species",
+    "selectSpecies": "Select species",
+    "otherSpecies": "Other",
+    "projectNotes": "Project Notes",
+    "uploadHint": "Upload sequencing data here",
+    "uploadText1": "Drop file here or",
+    "uploadText2": "click to upload",
+    "uploadTip": "Note: please make sure the file format is correct before uploading",
+    "formatRequirement": "File format requirements:"
+  },
+  "task": {
+    "title": "Task Information",
+    "type": "Task Type",
+    "parameter": "Parameters",
+    "status": "Status",
+    "running": "Running",
+    "finished": "Completed",
+    "submitTime": "Submission Time"
+  },
+  "parameter": {
+    "title": "Parameter Settings",
+    "qcPlots": "QC Plots",
+    "enable": "Enable",
+    "clusteringMethod": "Clustering Method",
+    "method1": "Method 1",
+    "method2": "Method 2",
+    "rules": {
+      "nCountRequired": "nCount_RNA is required",
+      "nFeatureRequired": "nFeature_RNA is required",
+      "percentMTRequired": "percent_MT is required",
+      "percentHBRequired": "percent_HB is required",
+      "mustBeNumber": "Value must be a number"
+    }
+  },
+  "annotation": {
+    "tabTitle": "Cell Annotation",
+    "dimPlot": "DimPlot",
+    "viewUmap": "View UMAP",
+    "selectModel": "Select annotation model",
+    "uploadTitle": "Upload Reference Data",
+    "modelName": "Model Name",
+    "uploadHint": "Upload reference dataset here",
+    "uploadTip": "Please ensure the file format is correct before uploading",
+    "formatRequirement": "File format requirements:",
+    "annotationColumnHint": "Please put your annotations in the Annotation column",
+    "calculateMarker": "Calculate Marker Genes",
+    "largeModel": "Large-model Assisted Annotation",
+    "largeModelResult": "Large-model Prediction Results",
+    "originResult": "Original Annotation",
+    "largeResult": "Large-model Annotation",
+    "reason": "Inference Basis",
+    "qcViolin": "QC Violin Plots",
+    "cellProportion": "Cell Proportion Based on Automatic Annotation",
+    "selectView": "Select view",
+    "rules": {
+      "modelNameRequired": "Model name is required",
+      "modelNamePattern": "Only letters, numbers and underscores are allowed"
+    }
+  },
+  "enrichment": {
+    "tabTitle": "Gene Enrichment Analysis",
+    "markerTable": "Marker Gene Table",
+    "dotPlot": "Dot Plot",
+    "markerNum": "Select number of marker genes",
+    "goEnrichment": "GO Enrichment",
+    "selectCluster": "Select cluster",
+    "qcViolin": "QC Violin Plots",
+    "viewSignificance": "View significance results",
+    "significanceTitle": "Significance Analysis",
+    "selectTwoCells": "Select two cell types",
+    "featurePlot": "Feature Plot"
+  },
+  "scenic": {
+    "tabTitle": "SCENIC",
+    "resultTitle": "SCENIC Analysis Results",
+    "selecttf": "Select a transcription factor",
+    "generatePlot": "Generate plots",
+    "runSCENIC": "Run SCENIC Analysis",
+
+    "plot1": "Heatmap of average regulon activity across cell types",
+    "plot2": "Regulon activity across cell types",
+    "plot3": "UMAP visualization of regulon activity",
+    "plot4": "Distribution of regulon activity",
+    "correlation": "相关性",
+    "pvalue": "P 值",
+    "result": "结果",
+    "plot1Params": "表达分布图参数设置",
+    "outlierSize": "离群点大小",
+    "frameSize": "边框粗细",
+    "parameterSetting": "设定参数"
+  },
+  "communication": {
+    "tabTitle": "Cell–Cell Communication Analysis",
+    "runAnalysis": "Run Cell Communication Analysis",
+    "count": "Count",
+    "weight": "Weight",
+    "circlePlot": "Circle Plot",
+    "heatmap": "Heatmap"
+  },
+  "cnv": {
+    "tabTitle": "Copy Number Variation Analysis",
+    "allCells": "All cells",
+    "selectedCells": "Selected cells",
+    "selectReferenceCells": "Select reference cells",
+    "referenceSelectionResult": "Reference cell selection result:",
+    "referenceTip": "Selected cells will be used as the reference population",
+    "resultTitle": "inferCNV Result"
+  },
+  "pseudotime": {
+    "tabTitle": "Pseudotime Analysis",
+    "allCells": "All cells",
+    "selectedCells": "Selected cells",
+    "trajectory": "Cell Trajectory",
+    "selectGenes": "Select genes",
+    "generatePlot": "Generate plots"
+  },
+  "tcga": {
+    "tabTitle": "Pan-cancer Analysis (TCGA)",
+    "resultTitle": "Pan-cancer Analysis Results",
+    "selectGene": "Select a gene",
+    "plot1": "Expression distribution",
+    "plot2": "Survival analysis",
+    "plot3": "DNA methylation",
+    "plot4": "Immune infiltration (TIMER)",
+    "correlation": "Correlation",
+    "pvalue": "P-value",
+    "result": "Result",
+    "plot1Params": "Parameters for expression plot",
+    "outlierSize": "Outlier size",
+    "frameSize": "Frame size",
+    "parameterSetting": "Parameter Settings"
+  },
+  "common": {
+    "view": "View",
+    "delete": "Delete",
+    "action": "Action",
+    "reset": "Reset",
+    "downloadCSV": "Download as CSV",
+    "selectAll": "Select all",
+    "deselectAll": "Deselect all",
+    "submit": "Submit",
+    "noData": "No data",
+    "noImage": "No image",
+    "processing": "Processing...",
+    "manual": "User Manual",
+    "uploadText1": "Drop file here or",
+    "uploadText2": "click to upload",
+    "uploadFailed": "Upload failed",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "pleaseSelect": "Please select",
+    "queryResult": "Query result"
+  }
+}

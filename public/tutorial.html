@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>平台使用教程</title>
-    <!-- 在 <style> 标签内添加以下样式 -->
+    <title>SCSEQ Platform User Tutorial</title>
+
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+                Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         .tutorial-container {
@@ -30,29 +31,47 @@
             padding: 20px 0;
         }
 
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-section {
+            margin-bottom: 24px;
+        }
+
+        .menu-section h3 {
+            font-size: 15px;
+            color: #666;
+            padding: 0 20px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .menu-item {
+            display: block;
+            padding: 10px 20px;
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover {
+            background-color: #f0f2f5;
+            color: #1890ff;
+            border-left: 3px solid #1890ff;
+        }
+
         .main-content {
             margin-left: 260px;
             padding: 20px 40px;
             flex: 1;
         }
 
-        .menu-item {
-            padding: 10px 20px;
-            cursor: pointer;
-            color: #333;
-            text-decoration: none;
-        }
-
-        .menu-item:hover {
-            background-color: #f5f7fa;
-        }
-
         .section {
-            margin-bottom: 40px;
-        }
-
-        .sub-section {
-            margin: 20px 0;
+            margin-bottom: 50px;
         }
 
         h1 {
@@ -64,21 +83,28 @@
 
         h2 {
             font-size: 22px;
-            margin: 16px 0;
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 24px;
+            margin-bottom: 8px;
         }
 
         .content {
             font-size: 16px;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #333;
         }
 
-        .example-box {
-            margin: 16px 0;
-            padding: 20px;
-            border: 1px solid #eee;
-            border-radius: 4px;
-            background-color: #fafafa;
+        ul, ol {
+            padding-left: 22px;
+        }
+
+        li {
+            margin: 6px 0;
         }
 
         .image-container {
@@ -100,525 +126,438 @@
     </style>
 </head>
 
-
-
-
-
 <body>
-    <div class="tutorial-container">
-        <!-- 侧边导航栏 -->
-        <!-- 在侧边导航栏中添加新的菜单项 -->
-        <!-- 修改导航栏结构 -->
-        <div class="sidebar">
-            <nav>
-                <div class="menu-section">
-                    <h3>平台介绍</h3>
-                    <a href="#interface-overview" class="menu-item">界面概述</a>
-                </div>
-                <div class="menu-section">
-                    <h3>基础操作</h3>
-                    <a href="#data-upload" class="menu-item">数据上传</a>
-                    <a href="#parameter-settings" class="menu-item">参数设置</a>
-                </div>
-                <!-- 在数据分析章节的导航栏中添加新的菜单项 -->
-                <div class="menu-section">
-                    <h3>数据分析</h3>
-                    <a href="#annotation-view" class="menu-item">注释分析</a>
-                    <a href="#proportion-view" class="menu-item">比例与功能分析</a>
-                    <a href="#table-analysis" class="menu-item">表格分析</a>
-                    <a href="#dotplot-analysis" class="menu-item">点图分析</a>
-                    <a href="#go-enrichment" class="menu-item">GO富集分析</a>
-                    <a href="#qc-violin" class="menu-item">基因QC小提琴图</a>
-                    <a href="#feature-plot" class="menu-item">特征图谱</a>
 
-                </div>
-                
-                
-                <div class="menu-section">
-                    <h3>高级分析</h3>
-                    <a href="#cell-communication" class="menu-item">细胞通讯分析</a>
-                    <a href="#infercnv-analysis" class="menu-item">拷贝数变异分析</a>
-                    <a href="#monocle-analysis" class="menu-item">拟时序分析</a>
-                    <a href="#tcga-analysis" class="menu-item">TCGA数据分析</a>
-                </div>
+<div class="tutorial-container">
 
-                
-            </nav>
-        </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <nav>
+            <div class="menu-section">
+                <h3>Introduction</h3>
+                <a href="#intro" class="menu-item">Platform Overview</a>
+                <a href="#interface" class="menu-item">Interface Overview</a>
+            </div>
 
-        <!-- 主要内容区域 -->
+            <div class="menu-section">
+                <h3>Workflow</h3>
+                <a href="#project" class="menu-item">Project Management</a>
+                <a href="#parameter" class="menu-item">Parameter Setup</a>
+            </div>
 
-        <main class="main-content">
-            <section class="section">
-                <h1>平台介绍</h1>
-                <div class="sub-section">
-                    <h2 id="interface-overview">界面概述</h2>
-                    <div class="content">
-                        <p>平台主界面包含四个主要区域：</p>
-                        <ul>
-                            <li><strong>界面介绍区</strong>：对用户需要上传的数据格式及要求进行描述，并展示示范数据及下载链接。</li>
-                            <li><strong>上传数据区</strong>：用户可以在这里上传自己的数据。</li>
-                            <li><strong>参数设置区</strong>：包含质控参数、聚类方法和聚类参数，用户可以通过下拉框进行选择。</li>
-                            <li><strong>分析按钮</strong>：用于启动分析流程。</li>
-                        </ul>
-                        <div class="image-container">
-                            <img src="/img/interface_overview.png" alt="平台主界面概述">
-                            <p class="image-caption">图1：平台主界面布局</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h1>基础操作</h1>
-                <div class="sub-section">
-                    <h2 id="data-upload">数据上传</h2>
-                    <div class="content">
-                        <p>在开始分析之前，首先需要上传待分析的数据：</p>
-                        <ol>
-                            <li>打开平台，进入主界面</li>
-                            <li>在上传数据区选择需要分析的文件</li>
-                            <li>确保数据格式符合要求</li>
-                        </ol>
-                        <div class="image-container">
-                            <img src="/img/data_upload.png" alt="数据上传界面">
-                            <p class="image-caption">图2：数据上传操作界面</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sub-section">
-                    <h2 id="parameter-settings">参数设置</h2>
-                    <div class="content">
-                        <p>完成数据上传后，需要设置分析参数：</p>
-                        <ul>
-                            <li>质控参数设置</li>
-                            <li>聚类方法选择</li>
-                            <li>聚类参数配置</li>
-                        </ul>
-                        <div class="content">
-                            <p>在Quality-Control界面中，可以查看经过筛选后的数据质控指标分布。</p>
-                            <div class="image-container">
-                                <img src="/img/quality_control.png" alt="参数设置界面">
-                                <p class="image-caption">图5：参数设置界面</p>
-                            </div>
-                        </div>
-                        <div class="example-box">
-                            <p>注意：参数设置会直接影响分析结果，请根据实际需求进行调整。</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section class="section">
-                <h1>数据分析</h1>
-
-                
-
-                 <div class="sub-section">
-                    <h2 id="annotation-view">注释分析</h2>
-                    <div class="content">
-                        <p>Dimplot界面展示了各类细胞亚群中的不同占比，每个点代表一个细胞。</p>
-                        <div class="image-container">
-                            <img src="/img/dimplot.png" alt="Dimplot视图">
-                            <p class="image-caption">图6：Dimplot细胞分布视图</p>
-                        </div>
-                        <p>在Annotation界面中，设置好GeneCountsPerCellgroup、minPCT与Pvalue参数后，可以查看不同细胞分组的特异Marker及其在所有细胞群中的表达情况。
-                        </p>
-                        <div class="image-container">
-                            <img src="/img/annotation.png" alt="注释分析界面">
-                            <p class="image-caption">图7：注释分析界面</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sub-section">
-                    <h2 id="proportion-view">比例与功能分析</h2>
-                    <div class="content">
-                        <p>在ProportionAndBiofunction界面中，设置SelectCellGroup参数后，可以查看不同细胞分群在不同样本中的分布，以及选中细胞群所富集的生物学功能。</p>
-                        <div class="image-container">
-                            <img src="/img/proportion.png" alt="比例与功能分析界面">
-                            <p class="image-caption">图8：比例与功能分析界面</p>
-                        </div>
-                        <p>可以在Select Gene下选择或手动输入特定基因（如Cd8a）进行进一步分析。</p>
-                        <div class="image-container">
-                            <img src="/img/gene_selection.png" alt="基因选择界面">
-                            <p class="image-caption">图9：基因选择界面</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="sub-section">
-                    <h2 id="table-analysis">表格分析</h2>
-                    <div class="content">
-                        <p>在Table界面中，您可以查看基因表达的详细数据：</p>
-                        <ul>
-                            <li><strong>gene</strong>：基因名称</li>
-                            <li><strong>p_val</strong>：统计显著性</li>
-                            <li><strong>avg_log2FC</strong>：基因表达量的差异倍数（对数形式）</li>
-                            <li><strong>pct.1和pct.2</strong>：在不同细胞群中的表达比例</li>
-                            <li><strong>p_val_adj</strong>：校正后的p值</li>
-                            <li><strong>cluster</strong>：细胞群分类</li>
-                        </ul>
-                        <p>表格支持数据导出功能，您可以通过"Download as CSV"按钮将数据保存为CSV格式。</p>
-                    </div>
-                </div>
-
-                <div class="sub-section">
-                    <h2 id="dotplot-analysis">点图分析</h2>
-                    <div class="content">
-                        <p>DotPlot视图提供了一种直观的方式来展示基因在不同细胞群中的表达情况：</p>
-                        <ul>
-                            <li>通过下拉菜单"请选择细胞组"可以选择要分析的细胞群</li>
-                            <li>点的大小表示在该细胞群中表达该基因的细胞比例</li>
-                            <li>点的颜色深浅表示平均表达水平的高低</li>
-                        </ul>
-                        <p>这种可视化方式特别适合比较不同基因在各个细胞群中的表达模式差异。</p>
-                    </div>
-                </div>
-
-                
-                
-                <div class="sub-section">
-                    <h2 id="go-enrichment">GO富集分析</h2>
-                    <div class="content">
-                        <p>GO富集分析可以帮助您理解基因集合的功能特征：</p>
-                        <ul>
-                            <li>展示了显著富集的生物学过程（BP）、分子功能（MF）和细胞组分（CC）</li>
-                            <li>气泡图中，点的大小表示富集基因数量</li>
-                            <li>颜色深浅表示富集显著性程度（p值）</li>
-                            <li>可以通过调整p值阈值筛选显著性水平</li>
-                        </ul>
-                        <p>这种分析方法可以帮助您发现细胞群的功能特征和生物学意义。</p>
-                    </div>
-                </div>
-
-                <div class="sub-section">
-                    <h2 id="qc-violin">基因QC小提琴图</h2>
-                    <div class="content">
-                        <p>基因QC小提琴图展示了单细胞数据的质量控制指标分布：</p>
-                        <ul>
-                            <li>nFeature_RNA：每个细胞检测到的基因数量</li>
-                            <li>nCount_RNA：每个细胞的总RNA计数</li>
-                            <li>percent.mt：线粒体基因的表达比例</li>
-                        </ul>
-                        <p>通过这些图表，您可以直观地了解数据质量分布，并据此设置合适的过滤阈值。</p>
-                    </div>
-                </div>
-
-                <div class="sub-section">
-                    <h2 id="feature-plot">特征图谱</h2>
-                    <div class="content">
-                        <p>FeaturePlot界面展示了所选基因（如Cd8a）阳性的细胞在各类细胞亚群中的不同占比。</p>
-                        <div class="image-container">
-                            <img src="/img/feature_plot.png" alt="特征图谱界面">
-                            <p class="image-caption">图10：特征图谱界面</p>
-                        </div>
-                    </div>
-                </div>
-
-                
-
-
-
-            </section>
-
-            <section class="section">
-                <h1>高级分析</h1>
-
-                <div class="sub-section">
-                    <h2 id="cell-communication">细胞通讯分析</h2>
-                    <div class="content">
-                        <p>细胞通讯分析提供了两种可视化方式来展示细胞间的相互作用：</p>
-                        
-                        <h3>圆形网络图</h3>
-                        <p>左侧的圆形网络图展示了不同细胞类型之间的通讯关系：</p>
-                        <ul>
-                            <li>每个节点代表一种细胞类型（如B cells、T cells、Fibroblasts等）</li>
-                            <li>连线的粗细表示细胞间通讯的强度</li>
-                            <li>不同颜色代表不同的细胞类型</li>
-                            <li>可以通过Count/Weight标签切换不同的计算方式</li>
-                        </ul>
-                        
-                        <h3>热图展示</h3>
-                        <p>右侧的热图展示了细胞间通讯的详细信息：</p>
-                        <ul>
-                            <li>行和列分别代表不同的细胞类型</li>
-                            <li>颜色深浅表示通讯强度（红色越深表示通讯越强）</li>
-                            <li>上方柱状图显示了各细胞类型的通讯总量</li>
-                            <li>可以观察到特定信号通路（如图中的MIF signaling）在不同细胞类型间的活性</li>
-                        </ul>
-                        
-                        <p>通过这些分析，您可以：</p>
-                        <ul>
-                            <li>识别关键的细胞通讯网络</li>
-                            <li>发现特定细胞类型间的重要相互作用</li>
-                            <li>了解信号通路在不同细胞群中的活性分布</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="sub-section">
-                    <h2 id="infercnv-analysis">拷贝数变异分析</h2>
-                    <div class="content">
-                        <p>拷贝数变异分析（inferCNV）用于检测单细胞数据中的基因组拷贝数变异：</p>
-                        
-                        <h3>细胞选择列表</h3>
-                        <p>左侧的细胞选择列表允许用户选择感兴趣的细胞类型进行分析：</p>
-                        <ul>
-                            <li>List 1：包含所有可选细胞类型</li>
-                            <li>List 2：显示已选择的细胞类型</li>
-                            <li>通过箭头按钮可以在两个列表间移动细胞类型</li>
-                        </ul>
-                        
-                        <h3>拷贝数变异热图</h3>
-                        <p>右侧的热图展示了选定细胞类型的拷贝数变异情况：</p>
-                        <ul>
-                            <li>每行代表一个细胞，列代表基因组区域</li>
-                            <li>颜色表示表达水平的变化，红色表示拷贝数增加，蓝色表示减少</li>
-                            <li>可以观察到不同细胞群的基因组变异模式</li>
-                        </ul>
-                        
-                        <p>通过这些分析，您可以：</p>
-                        <ul>
-                            <li>识别细胞群中的拷贝数变异</li>
-                            <li>发现潜在的基因组异常</li>
-                            <li>了解细胞群的基因组稳定性</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="sub-section">
-                    <h2 id="monocle-analysis">拟时序分析</h2>
-                    <div class="content">
-                        <p>在拟时序分析界面中，用户可以查看选中细胞群在时间分化上的先后顺序和演变趋势：</p>
-                        
-                        <h3>拟时序轨迹图</h3>
-                        <p>上方的图展示了细胞在拟时序中的分布：</p>
-                        <ul>
-                            <li>图1：细胞在拟时序中的分布，颜色表示伪时间</li>
-                            <li>图2：细胞在拟时序中的分布，颜色表示细胞类型</li>
-                        </ul>
-                        
-                        <h3>基因表达变化图</h3>
-                        <p>下方的图展示了选定基因在拟时序中的表达变化：</p>
-                        <ul>
-                            <li>每个点代表一个细胞的基因表达水平</li>
-                            <li>颜色表示伪时间，深色表示较晚的时间点</li>
-                            <li>可以观察到基因在细胞分化过程中的表达趋势</li>
-                        </ul>
-                        
-                        <div class="image-container">
-                            <img src="/img/monocle_trajectory.png" alt="拟时序轨迹图">
-                            <p class="image-caption">图16：拟时序轨迹图</p>
-                        </div>
-                        <div class="image-container">
-                            <img src="/img/gene_expression_pseudotime.png" alt="基因表达变化图">
-                            <p class="image-caption">图17：基因表达变化图</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sub-section">
-                    <h2 id="tcga-analysis">TCGA数据分析</h2>
-                    <div class="content">
-                        <p>如果用户在上述分析过程中发现了感兴趣的基因，可以进入TCGA页面进行更深入的分析。该页面提供以下四个方面的分析：</p>
-                        <ul>
-                            <li><strong>泛癌表达分析</strong>：展示目标基因在各种癌症类型中的表达情况</li>
-                            <li><strong>生存分析</strong>：展示目标基因在泛癌中与患者生存的相关性</li>
-                            <li><strong>甲基化分析</strong>：展示目标基因在泛癌中与对应甲基化位点的关系</li>
-                            <li><strong>免疫微环境分析</strong>：展示目标基因在泛癌中与免疫微环境的关系</li>
-                        </ul>
-                        
-                        <h3>图表展示</h3>
-                        <p>以下图表展示了不同分析结果：</p>
-                        <div class="image-container">
-                            <img src="/img/tcga_expression.png" alt="泛癌表达分析">
-                            <p class="image-caption">图片1：泛癌表达分析</p>
-                        </div>
-                        <div class="image-container">
-                            <img src="/img/tcga_forest_plot.png" alt="生存分析森林图">
-                            <p class="image-caption">图片2：生存分析森林图</p>
-                        </div>
-                        <div class="image-container">
-                            <img src="/img/tcga_methylation_heatmap.png" alt="甲基化分析热图">
-                            <p class="image-caption">图片3：甲基化分析热图</p>
-                        </div>
-                        <div class="image-container">
-                            <img src="/img/tcga_immune_heatmap.png" alt="免疫微环境分析热图">
-                            <p class="image-caption">图片4：免疫微环境分析热图</p>
-                        </div>
-                        
-                        <h3>数据导出</h3>
-                        <p>分析结果可以导出为CSV格式，包含以下信息：</p>
-                        <ul>
-                            <li><strong>cg</strong>：细胞群类型</li>
-                            <li><strong>Correlation</strong>：相关性系数</li>
-                            <li><strong>P_Value</strong>：统计显著性</li>
-                            <li><strong>res</strong>：显著性标记</li>
-                        </ul>
-                        <button>Download as CSV</button>
-                    </div>
-                </div>
-            </section>
-
-        </main>
+            <div class="menu-section">
+                <h3>Analysis Modules</h3>
+                <a href="#annotation" class="menu-item">Cell Annotation</a>
+                <a href="#enrichment" class="menu-item">Gene Enrichment</a>
+                <a href="#communication" class="menu-item">Cell-Cell Communication</a>
+                <a href="#cnv" class="menu-item">Copy Number Variation</a>
+                <a href="#pseudotime" class="menu-item">Pseudotime Analysis</a>
+                <a href="#pancancer" class="menu-item">Pan-Cancer Analysis</a>
+            </div>
+        </nav>
     </div>
 
+    <!-- Main Content -->
+    <main class="main-content">
 
+        <section class="section" id="intro">
+            <h1>1. Introduction to the Platform</h1>
+            <div class="content">
+                <p>The SCSEQ platform adopts a project-based workflow in which all analytical tasks must be created and executed under a project. This design ensures that data remain isolated between projects and that analytical results are traceable across different stages. This tutorial introduces the initial workflow from logging into the platform to accessing result visualizations.</p>
+            </div>
+        </section>
 
-    <style>
-        .menu-section {
-            margin-bottom: 24px;
-            display: flex;
-            flex-direction: column;
-        }
+        <section class="section" id="interface">
+            <h1>2. Interface Overview</h1>
+            <div class="content">
+                <p>After logging into the SCSEQ cloud platform, the user enters the Welcome Page. The sidebar on the left serves as the main entry point for all subsequent operations and contains three core modules:</p>
+                <ul>
+                    <li><strong>Project Management</strong> — Workspace for creating and managing sequencing analysis projects. Users can view all projects under their account and inspect task information for each project.</li>
+                    <li><strong>Parameter Setup</strong> — Used to check uploaded datasets and configure preprocessing parameters. Quality control metrics are displayed using violin plots.</li>
+                    <li><strong>Result Visualization</strong> — Provides downstream analytical modules and visual outputs.</li>
+                </ul>
+                <div class="image-container">
+                    <img src="/img/welcome.png" alt="平台主界面概述" width="80%" >
+                </div>
+            </div>
+        </section>
 
-        .menu-section h3 {
-            font-size: 16px;
-            color: #666;
-            padding: 0 20px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
+        <section class="section" id="project">
+            <h1>3. Project Management</h1>
+            <div class="content">
+                <p>Project Management functions as the core carrier of the analytical workflow. Multiple downstream analyses can be executed within the same project. If samples need to be added or removed, a new project must be created to prevent mixing historical outputs.</p>
+                <div class="image-container">
+                    <img src="/img/project.png" width="80%">
+                </div>
+                <h2>3.1 Creating a New Project</h2>
+                <div class="image-container">
+                    <img src="/img/upload_data.png" width="80%">
+                </div>
+                <ol>
+                    <li>Click New Project in the upper-left corner.</li>
+                    <li>Fill in the following fields in the dialog box:</li>
+                </ol>
 
-        .menu-item {
-            display: block;
-            padding: 10px 20px;
-            color: #555;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            border-left: 3px solid transparent;
-            cursor: pointer;
-        }
+                <ul>
+                    <li>Project Name — Suggested format “Tissue–Objective” (e.g., Liver–Tumor)</li>
+                    <li>Species — Select species from the dropdown menu</li>
+                    <li>Description (optional) — Brief notes on sample source or experiment purpose</li>
+                </ul>
 
-        .menu-item:hover {
-            background-color: #f0f2f5;
-            color: #1890ff;
-            border-left: 3px solid #1890ff;
-        }
+                <p>Upload input data according to the required file format. The platform validates file structure before allowing submission.</p>
+                <p>Click Confirm. The system generates a project directory, returns a project ID, computes initial quality metrics, and redirects to Parameter Setup.</p>
 
-        .sidebar nav {
-            display: flex;
-            flex-direction: column;
-        }
+                <h2>3.2 Task Information</h2>
+                <div class="image-container">
+                    <img src="/img/task_information_tab.png" width="50%">
+                </div>
+                <p>Project task information can be viewed by clicking View on the lower-right corner of a project card. The task dialog contains:</p>
+                <div class="image-container">
+                    <img src="/img/task_information.png" width="80%">
+                </div>
+                <ul>
+                    <li><strong>Task Tree</strong> — The root node represents raw project data. The second-level nodes represent cell annotation models, and the third-level nodes correspond to downstream analyses such as GO enrichment, cell–cell communication, CNV, pseudotime, or pan-cancer analysis. Each task node stores metadata.</li>
+                    <li><strong>Task Table</strong> — Displays detailed task information including task type, parameter settings, running status, submission timestamp, and operation options. Users may view results or delete task records. Deleting a task removes its outputs.</li>
+                </ul>
+            </div>
+        </section>
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
+        <section class="section" id="parameter">
+            <h1>4. Parameter Setup</h1>
+            <div class="content">
+                <div class="image-container">
+                    <img src="/img/parameter_setting.png" width="80%">
+                </div>
+                <p>The Parameter Setup page displays basic QC plots and allows users to define preprocessing thresholds.</p>
 
-        .tutorial-container {
-            display: flex;
-            min-height: 100vh;
-        }
+                <h3>Quality Control Metrics</h3>
+                <ul>
+                    <li>nFeature_RNA — Number of detected genes per cell</li>
+                    <li>nCount_RNA — Total UMI counts per cell</li>
+                    <li>percent.mt — Maximum allowed mitochondrial gene percentage</li>
+                </ul>
 
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 260px;
-            height: 100vh;
-            border-right: 1px solid #e6e6e6;
-            background-color: #fff;
-            overflow-y: auto;
-            padding: 20px 0;
-        }
+                <h3>Clustering Method</h3>
+                <p>Users may select either UMAP or t-SNE for dimensionality reduction.</p>
 
-        .main-content {
-            margin-left: 260px;
-            padding: 20px 40px;
-            flex: 1;
-        }
+                <p>After confirming parameters, click Submit to proceed to Result Visualization.</p>
+            </div>
+        </section>
 
-        .menu-section {
-            margin-bottom: 24px;
-            display: flex;
-            flex-direction: column;
-        }
+        <section class="section" id="annotation">
+            <h1>5. Result Visualization — Cell Annotation</h1>
+            <div class="content">
+                <p>Cell annotation assigns biological identities (e.g., T cells, B cells, tumor cells) to clusters derived from upstream preprocessing. Accurate annotation serves as the foundation for downstream analysis including differential expression, communication, and trajectory inference.</p>
 
-        .menu-section h3 {
-            font-size: 16px;
-            color: #666;
-            padding: 0 20px;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
+                <h2>5.1 Module Description</h2>
+                <ul>
+                    <li>Cluster visualization</li>
+                    <li>Post-QC violin plots</li>
+                    <li>Cell proportion charts</li>
+                </ul>
 
-        .menu-item {
-            display: block;
-            padding: 10px 20px;
-            color: #555;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            border-left: 3px solid transparent;
-        }
+                <p>Proportion charts update when annotation labels change.</p>
+                <div class="image-container">
+                <img src="/img/cell_annotation.png" width="80%">
+            </div>
+            </div>
+            
+            <h2>5.2 Pre-Annotation Checklist</h2>
+<div class="content">
+    <ol>
+        <li>
+            <strong>Verify input clustering quality</strong><br>
+            Clusters should be visually separable on UMAP. Populations with fewer than 50 cells may yield uncertain labels. If clustering resolution is too high (>1.5), reducing resolution is recommended.
+        </li>
+        <li>
+            <strong>Select annotation strategy</strong><br>
+            SCSEQ provides three annotation methods:
+            <ul>
+                <li>SingleR — Reference-based matching for fast initial annotation</li>
+                <li>Celltypist — Machine learning models with training support</li>
+                <li>LLM-based annotation — Large language model + RAG with interpretable suggestions</li>
+            </ul>
+            Cross-validation between methods is recommended.
+        </li>
+    </ol>
+</div>
 
+<h2>5.3 Operation Steps</h2>
+<div class="content">
+    <ol>
+        <li>Click Result Visualization</li>
+        <li>Select Cell Annotation</li>
+        <li>Choose a reference dataset and execute</li>
+    </ol>
+    <div class="image-container">
+        <img src="/img/cell_annotation_select.png"  width="50%">
+    </div>
+    <p>After completion, the outputs include:</p>
+    <ul>
+        <li>UMAP colored by annotation</li>
+        <div class="image-container">
+            <img src="/img/cell_annotation_singlecell.png"  width="60%">
+        </div>
+        <li>Cell proportion plots (percentage or absolute, with configurable grouping)</li>
+    </ul>
+</div>
 
-        .menu-item:hover {
-            background-color: #f0f2f5;
-            color: #1890ff;
-            border-left: 3px solid #1890ff;
-        }
+<h2>5.4 Optional — Custom Model Training</h2>
+<div class="content">
+    <p>Users may upload annotated datasets to train a custom model:</p>
 
-        .sidebar nav {
-            display: flex;
-            flex-direction: column;
-        }
+    <p><strong>Requirements:</strong> Annotated .h5ad file containing a cell_type column</p>
 
-        .section {
-            margin-bottom: 40px;
-        }
+    <p><strong>Training steps:</strong></p>
+    <ol>
+        <li>Select reference mode: Train your reference</li>
+        <div class="image-container">
+            <img src="/img/train_your_model.png"  width="50%">
+        </div>
+        <li>Upload file</li>
+        <li>Provide model name</li>
+        <div class="image-container">
+            <img src="/img/upload_reference_data.png"  width="80%">
+        </div>
+    </ol>
 
-        .sub-section {
-            margin: 20px 0;
-        }
+    <p>Training takes ~10–30 minutes and produces a reusable model.</p>
+    <p>Custom models can be invoked for future projects without retraining.</p>
+</div>
+        </section>
 
-        h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-        }
+        <section class="section" id="enrichment">
+            <h1>6. Gene Enrichment Analysis</h1>
+            <div class="content">
+                <p>Gene enrichment analysis links differential gene signatures with functional interpretation. After differential expression analysis, marker genes are used to identify relevant biological processes and pathways.</p>
+        
+                <h2>6.1 Module Description</h2>
+                <ul>
+                    <li>Differential gene table</li>
+                    <li>Bubble plot of marker genes</li>
+                    <li>GO enrichment bar chart</li>
+                    <li>Feature gene scatter plot</li>
+                    <li>Feature gene violin plot</li>
+                </ul>
+                <div class="image-container">
+                    <img src="/img/go.png" width="80%">
+                </div>
+                <h2>6.2 Prerequisites</h2>
+                <ol>
+                    <li><strong>Marker gene computation</strong><br>
+                        The platform derives top marker genes per cell type after cell annotation.
+                    </li>
+                    <li><strong>Inspect expression patterns</strong><br>
+                        Bubble plots encode expression proportion (dot size) and expression level (color scale), enabling identification of type-specific markers.
+                    </li>
+                </ol>
+                <div class="image-container">
+                    <img src="/img/marker_table.png" width="80%">
+                </div>                
+                <div class="image-container">
+                    <img src="/img/marker_dotplot.png" width="80%">
+                </div>
+                <p>Scatter and violin plots display gene distribution across cell types.</p>
+                <div class="image-container">
+                    <img src="/img/feature_plot.png" width="40%" >
+                    <img src="/img/feature_vln.png" width="40%" >
+                </div>
+                <h2>6.3 Operation Steps</h2>
+                <ol>
+                    <li>Navigate to Gene Enrichment Analysis</li>
+                    <li>Select target cell type</li>
+                </ol>
+        
+                <p>Outputs include GO bar chart:</p>
+                <ul>
+                    <li>Y-axis: GO terms sorted by p-value</li>
+                    <li>X-axis: Count of enriched genes</li>
+                    <li>Color scale: Significance level</li>
+                </ul>
+                <div class="image-container">
+                    <img src="/img/go_barplot.png" width="60%">
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" id="communication">
+            <h1>7. Cell-Cell Communication Analysis</h1>
+            <div class="content">
+                <p>Cell–cell communication evaluates potential signaling interactions among annotated cell groups using ligand–receptor models. SCSEQ integrates CellChat and CellChatDB for inference.</p>
+        
+                <h2>7.1 Module Description</h2>
+                <ul>
+                    <li>Circular interaction network</li>
+                    <li>Communication heatmap</li>
+                </ul>
+                <div class="image-container">
+                    <img src="/img/cellchat.png" width="80%">
+                </div>
+                <h2>7.2 Prerequisites</h2>
+                <ul>
+                    <li>Annotated dataset with cell_type</li>
+                    <li>Sufficient cell count per type (≥50 cells recommended)</li>
+                </ul>
+        
+                <h2>7.3 Operation Steps</h2>
+                <ol>
+                    <li>Navigate to Cell–Cell Communication</li>
+                    <li>Click Run</li>
+                    <li>Choose visualization mode (count or weight)</li>
+                </ol>
+        
+                <p>Outputs include:</p>
+        
+                <p><strong>Circular plot:</strong> Used to display the overall interaction network among cell groups. The width or arc length of the circle represents the total communication strength of each cell group as a sender or receiver, while the connecting chords represent the signal magnitude between different cell groups, helping to identify dominant communication nodes.</p>
+        
+                <p><strong>Heatmap:</strong> Rows and columns represent sender and receiver cell groups, and the color intensity reflects communication strength or the number of ligand–receptor pairs, allowing rapid identification of active cell pairs.</p>
+                <div class="image-container">
+                    <img src="/img/cellchat_single_cell.png" width="80%">
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" id="cnv">
+            <h1>8. Copy Number Variation (CNV)</h1>
+            <div class="content">
+                <p>CNV inference detects chromosomal amplification or deletion signals indirectly from gene expression continuity patterns. SCSEQ integrates inferCNV for visualization.</p>
+        
+                <h2>8.1 Module Description</h2>
+                <ul>
+                    <li>Heatmap visualization</li>
+                    <li>Reference cell selection panel</li>
+                </ul>
+                <div class="image-container">
+                    <img src="/img/cnv.png" width="80%">
+                </div>
+                <h2>8.2 Prerequisites</h2>
+                <ul>
+                    <li>Annotated dataset</li>
+                    <li>≥50 cells per cell type</li>
+                </ul>
+        
+                <h2>8.3 Operation Steps</h2>
+                <ol>
+                    <li>Navigate to CNV</li>
+                    <li>Select target cell groups and reference cell types</li>
+                    <li>Execute analysis</li>
+                </ol>
+        
+                <p>Outputs include:</p>
+                <p><strong>InferCNV heatmap:</strong></p>
+                <ul>
+                    <li>X-axis: Genes ordered by genomic position</li>
+                    <li>Y-axis: sCells ordered by cell type and CNV pattern</li>
+                    <li>Color: gene expression levels (red = high expression, blue = low expression)</li>
+                    <li>Red — elevated expression (amplification)</li>
+                    <li>Blue — reduced expression (deletion)</li>
+                    <li>White — no major change</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section" id="pseudotime">
+            <h1>9. Pseudotime Analysis</h1>
+            <div class="content">
+                <p>Pseudotime analysis reconstructs continuous cell-state transitions from static single-cell profiles. SCSEQ uses Monocle3 to infer trajectories and visualize gene dynamics.</p>
+        
+                <h2>9.1 Module Description</h2>
+                <ul>
+                    <li>Pseudotime trajectories</li>
+                    <li>Cell type mapping on trajectories</li>
+                    <li>Gene expression trends along pseudotime</li>
+                </ul>
+                <div class="image-container">
+                    <img src="/img/pseudotime.png" width="80%">
+                </div>
+                <h2>9.2 Prerequisites</h2>
+                <ul>
+                    <li>Annotated dataset</li>
+                    <li>≥50 cells per type</li>
+                    <li>Highly variable gene selection completed</li>
+                </ul>
+        
+                <h2>9.3 Operation Steps</h2>
+                <ol>
+                    <li>Navigate to Pseudotime Analysis</li>
+                    <li>Select target cells</li>
+                    <li>Execute analysis</li>
+                    <li>Optionally select genes for trend visualization</li>
+                </ol>
+        
+                <p>Outputs include:</p>
+        
+                <p><strong>Pseudotime heatmap:</strong></p>
+                <ul>
+                    <li>X-axis: genomic regions (genes ordered by chromosomal position)</li>
+                    <li>Y-axis: single cells (ordered by pseudotime values)</li>
+                    <li>Color: gene expression levels (red = high expression, blue = low expression)</li>
+                </ul>
+        
+                <p><strong>Trajectory structure plot:</strong> Cell annotation labels are overlaid on the trajectory backbone to verify whether the inferred trajectory aligns with biological logic.</p>
+        
+                <p><strong>Gene expression trend plot:</strong></p>
+                <ul>
+                    <li>X-axis: pseudotime (normalized to 0–1)</li>
+                    <li>Y-axis: gene expression levels (log2-transformed)</li>
+                    <li>Fitted curve: LOESS smoothing curve showing the overall trend</li>
+                </ul>
+                <div class="image-container">
+                    <img src="/img/pseudotime_gene.png" width="80%">
+                </div>
+            </div>
+        </section>
+        
+        <section class="section" id="pancancer">
+            <h1>10. Pan-Cancer Analysis</h1>
+            <div class="content">
+                <p>Pan-cancer analysis compares molecular signatures across multiple cancer types to reveal shared mechanisms and heterogeneity.</p>
+        
+                <h2>10.1 Module Description</h2>
+                <ul>
+                    <li>Expression boxplots</li>
+                    <li>Methylation correlation heatmaps</li>
+                    <li>Immune infiltration correlation matrices</li>
+                    <li>Survival forest plots</li>
+                </ul>
+                <div class="image-container">
+                    <img src="/img/tcga1.png" width="80%">
+                </div>                
+                <div class="image-container">
+                    <img src="/img/tcga2.png" width="80%">
+                </div>
+                <h2>10.2 Prerequisites</h2>
+                <ul>
+                    <li>Annotated dataset</li>
+                    <li>≥50 cells per type</li>
+                    <li>Highly variable gene selection completed</li>
+                </ul>
+        
+                <h2>10.3 Operation Steps</h2>
+                <ol>
+                    <li>Navigate to Pan-Cancer Analysis</li>
+                    <li>Select target gene from dropdown</li>
+                    <div class="image-container">
+                        <img src="/img/tcga_submit.png" width="50%">
+                    </div>
+                    <li>Submit analysis</li>
+                </ol>
+        
+                <p>Outputs include:</p>
+        
+                <p><strong>Expression differential boxplot:</strong> The x-axis represents cancer types, and the y-axis represents normalized expression levels.</p>
+        
+                <p><strong>Methylation correlation heatmap:</strong> Rows correspond to CpG sites and columns correspond to cancer types. Colors represent Spearman correlation coefficients.</p>
+        
+                <p><strong>Immune infiltration correlation heatmap:</strong> Colors represent Pearson correlation coefficients with significance annotations.</p>
+        
+                <p><strong>Survival forest plot:</strong> Horizontal lines represent 95% confidence intervals, and squares mark hazard ratio point estimates.</p>
+            </div>
+        </section>
+        
 
-        h2 {
-            font-size: 22px;
-            margin: 16px 0;
-        }
+    </main>
+</div>
 
-        .content {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .example-box {
-            margin: 16px 0;
-            padding: 20px;
-            border: 1px solid #eee;
-            border-radius: 4px;
-            background-color: #fafafa;
-        }
-
-        .image-container {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            border: 1px solid #eee;
-            border-radius: 4px;
-        }
-
-        .image-caption {
-            margin-top: 10px;
-            color: #666;
-            font-size: 14px;
-        }
-    </style>
 </body>
+</html>
